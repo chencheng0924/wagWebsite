@@ -2,7 +2,7 @@ import API from "@/utils/api"
 import { ElLoading } from 'element-plus'
 import dayjs from 'dayjs'
 export const useCommon = () => {
-  const loadingScreenTest = (val: boolean) => {
+  const loadingScreen = (val: boolean) => {
     const loading = ElLoading.service({
       lock: true,
       text: 'Loading',
@@ -17,8 +17,12 @@ export const useCommon = () => {
   const dateChange = (date: string) => {
     return dayjs(date).format('YYYY-MM-DD')
   }
+  const getAssetsFile = (location: string) => {
+    return new URL(`../assets/${location}`, import.meta.url).href;
+  }
   return {
-    loadingScreenTest,
+    loadingScreen,
     dateChange,
+    getAssetsFile
   }
 }
