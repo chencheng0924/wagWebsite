@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+    <g data-name="グループ 60846" transform="translate(1313 271)">
+        <circle data-name="楕円形 1255" cx="40" cy="40" r="40" transform="translate(-1313 -271)" style="fill:#adadad"/>
+    </g>
+    <g data-name="グループ 60863">
+        <path data-name="合体 58" d="M5.068 35.029V0H0v35.029z" transform="rotate(135 16.61 36.517)" style="fill:#fff"/>
+        <path data-name="合体 59" d="M5.068 0v35.03H0V0z" transform="rotate(45 -5.875 73.983)" style="fill:#fff"/>
+    </g>
+</svg>
