@@ -1,4 +1,5 @@
 <template>
+  <CommonNavHeader/>
   <div class="wrapper">
     <div class="banner">
       <img src="../assets/icon/logo2.png" alt="">
@@ -44,6 +45,38 @@
       </div>
       <div class="img"><img src="../assets/img/indexConsult.jpg" alt=""></div>
     </div>
+    <div class="w-full pt-[103px] pb-[131px] bg-bg-purple flex flex-col items-center">
+      <span class="text-black font-semibold text-2xl mb-[30px]">适用于各行业的解决方案</span>
+      <div class="bg-white rounded-[50px] py-[6px] px-[10px] flex gap-[12px]">
+        <div @click="tabChange(idx)" v-for="(tab, idx) in tabs" :key="idx + 'tab'" class="px-[28px] py-[10px] cursor-pointer" :class="{'bg-bg-tab': tab.active, 'rounded-[40px]': tab.active}">{{ tab.tab }}</div>
+      </div>
+      <div class="mt-[85px] bg-white flex rounded-[50px]">
+        <img :src="commonStore.useAsset(`picc${nowIdx}.png`)" alt="">
+        <div class="px-[73px] py-[105px] flex flex-col items-start">
+          <div class="flex">
+            <img src="@/assets/img/star.svg" alt="star" v-for="i in 5">
+          </div>
+          <div class="w-[300px] mt-[30px] leading-10 font-semibold">{{ tabs[nowIdx].txt }}</div>
+          <div class="bg-bg-yellow px-[10px] mt-[20px]">{{ tabs[nowIdx].type }}</div>
+          <div v-if="tabs[nowIdx].use.length == 0" class="flex mt-[36px] gap-[52px]">
+            <div class="flex flex-col items-center">
+              <span>好评率</span>
+              <span class="font-semibold text-[32px]">＋22%</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <span>新客率</span>
+              <span class="font-semibold text-[32px]">＋47%</span>
+            </div>
+          </div>
+          <div class="flex mt-[36px] gap-[24px]" v-else>
+            <span class="font-semibold text-[14px]">使用产品</span>
+            <div class="flex flex-col gap-[12px]">
+              <div v-for="use in tabs[nowIdx].use" class="bg-bg-blue text-white px-[10px]">{{ use }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="glow">
       <div class="title1">WORLDWIDE AND GLOW</div>
       <div class="title2">我们一起携手合作，让您的品牌曝光率不断提升！</div>
@@ -58,6 +91,7 @@
       </div>
     </div>
   </div>
+  <CommonBottomFooter/>
 </template>
 <script setup lang="ts">
 const commonStore = useCommon()
@@ -92,6 +126,22 @@ const consultTextList = reactive([
   {text:'配有多个24小时丰富营销经验技术'},
   {text:'嵌入式营销团队，与您携手精准推广品牌'}
 ])
+const tabs = reactive([
+  { tab: '餐馆', active: true, txt: '“提升季节性淡季客流量的问题，客人回头率提高，增加近4成新客流量”', type: '知名连锁餐厅品牌', use: [] },
+  { tab: '奶茶店', active: false, txt: '“提供合适性优惠活动建议以及高效的线上点单网页，增加旧客口碑推广，吸引不少周边新客人”', type: '知名连锁奶茶品牌', use: ['预约系统', '活动策划地推'] },
+  { tab: '美甲沙龙', active: false, txt: '“通过高度有针对性的宣传手段，成功触击了超过1200位新客户，为店铺注入了繁忙的人潮，同时也在市场中创造出一波口碑流量”', type: '搜索排行NO.1美甲店', use: ['网页设计', '活动策划地推'] },
+  { tab: '按摩', active: false, txt: '“在线展示介紹服务和設施，建立信任和专业形象，吸引客户更容易找到店，增加知名度并建立强大的在线社区，經常与客户分享有关Spa服务、护理和健康建议的内容”', type: '地区热门Spa店', use: ['网页设计', '社群媒体运营'] },
+  { tab: '医美', active: false, txt: '“提高和现有客户互动，经常性发宣传促销和特别优惠，以旧客口碑推荐来的新客人比以前高更多”', type: '西岸医美集团', use: ['邮件＆简讯营销', '社群媒体运营'] },
+  { tab: '房地产', active: false, txt: '“增加一倍在市场上曝光度和知名度，宣传新项目、特别优惠和房源，成功利用广告来推动我们的业务”', type: '房地产集团', use: ['关键字广告投放', 'PR公关服务'] },
+  { tab: '装修建材', active: false, txt: '“媒体平台上互动让我们更了解客户，做针对性广告策略，将信息传达给真正有兴趣的客户”', type: '美东老字号品牌', use: ['关键字广告投放', '社群媒体运营'] },
+  { tab: '室内设计', active: false, txt: '“每天都有顾客谘询，触及率提高，准确吸引到正在寻找室内设计服务的客户，完善网页提高客户对我们的品牌的认知”', type: '初创室内设计新品牌', use: ['关键字广告投放', '社群媒体运营', '网站设计维护'] }
+])
+const nowIdx = ref(0)
+const tabChange = (idx: number) => {
+  tabs.forEach(el => el.active = false)
+  tabs[idx].active = true
+  nowIdx.value = idx
+}
 // type eventItem = {
 //   title: string;
 //   router: string;
@@ -315,5 +365,18 @@ const consultTextList = reactive([
       }
     }
   }
+}
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
 }
 </style>

@@ -20,9 +20,18 @@ export const useCommon = () => {
   const getAssetsFile = (location: string) => {
     return new URL(`../assets/${location}`, import.meta.url).href;
   }
+  const useAsset = (path: string): string => {
+    const assets = import.meta.glob('~/assets/**/*', {
+      eager: true,
+      import: 'default',
+    })
+    // @ts-expect-error: wrong type info
+    return assets['/assets/' + path]
+  }
   return {
     loadingScreen,
     dateChange,
-    getAssetsFile
+    getAssetsFile,
+    useAsset
   }
 }

@@ -1,185 +1,29 @@
 <script setup>
 import { useRouter } from 'vue-router'
 const router = useRouter()
-const emit = defineEmits(['update:backStep'])
-const props = defineProps({
-  ifBack: {
-    type: Boolean,
-    required: true
-  },
-  backTarget: {
-    type: String,
-    required: false
-  },
-  backStep: {
-    type: Number,
-    required: false
-  },
-  backStatus: {
-    type: Boolean,
-    required: false
-  },
-  title: {
-    type: String,
-    required: true
-  },
-  isRedirect: {
-    type: Boolean,
-    required: true
-  }
-})
-const back = (url, step, status) => {
-  if (url) {
-    if(status){
-      window.location.href = url
-    } else {
-      router.push(url)
-    }
-  } else if(step) {
-    step = step - 1
-    emit('update:backStep', step)
-  } else {
-    router.back()
-  }
-}
+const routerData = reactive([
+  { linkName: '关于ＷＡＧ', link: '/about' },
+  { linkName: '服务项目', link: '/service' },
+  { linkName: '成功案例', link: '/example' },
+  { linkName: '营销博客', link: '/blog' },
+  { linkName: '招聘资讯', link: '/info' },
+  { linkName: '联系我们', link: '/contact' }
+])
 </script>
 <template>
-  <div class="navHeader" :class="{ isRedirect: props.isRedirect }">
-    <div class="navHeader--inside">
-      <div class="navHeader--inside--back" @click="back(backTarget, backStep, backStatus)">
-        <img src="@/assets/arrowwhite.svg" v-if="props.ifBack">
-      </div>
-      <div class="navHeader--inside--title">
-        <span>{{ props.title }}</span>
-      </div>
-      <div class="navHeader--inside--leave"></div>
+  <div class="flex pt-[22px] pl-[90px] pr-[90px] pb-[22px] justify-between items-center">
+    <div class="flex items-end">
+      <img src="@/assets/icon/logo2.png" alt="logo" class="w-[65px]">
+      <span class="font-bold text-xl text-main-yellow">流量专家</span>
+    </div>
+    <div class="flex gap-[32px] text-text-black">
+      <NuxtLink v-for="(link, idx) in routerData" :key="idx + 'router'" :to="link.link">{{ link.linkName }}</NuxtLink>
+    </div>
+    <div class="rounded-[40px] w-[189px] h-[41px] bg-main-yellow flex items-center justify-center text-white font-normal">
+      <span>领取Demo</span>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
-  :root {
-    --safe-area-inset-top: 0px; 
-    @supports (top: constant(safe-area-inset-top)){
-        --safe-area-inset-top: constant(safe-area-inset-top);    
-    }
-    @supports (top: env(safe-area-inset-top)){
-        --safe-area-inset-top: env(safe-area-inset-top);         
-    }
-  }
-  .navHeader {
-    position: fixed; 
-    top: 0;
-    background-color: #2eb6c7;
-    width: 100vw;
-    z-index: 100000;
-    padding-top: calc(var(--safe-area-inset-top) + 5px);
-    padding-bottom: 5px;
-    // padding-top: var(--safe-area-inset-top);
-    max-height: 45px;
-    // height: 56px;
-    // border: 1px solid red;
-    .navHeader--inside {
-      max-height: 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      // height: 80px;
-      // height: 45.5px;
-      padding-left: 20px;
-      padding-right: 20px;
-      // padding-top: var(--safe-area-inset-top);
-      // padding-top: calc(var(--safe-area-inset-top) + 8px);
-      // padding-bottom: 8px;
-      // padding-top: unquote(var(--safe-area-inset-top));
-      .navHeader--inside--back {
-        width: 35px;
-        display: flex;
-        align-items: center;
-        >img {
-          width: 24px;
-          transform: rotate(180deg);
-        }
-      }
-      .navHeader--inside--title {
-        width: 280px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        text-align: center;
-        color: #FFFFFF;
-        font-weight: 500;
-        font-size: 16px;
-        font-stretch: normal;
-        font-style: normal;
-        font-family: PingFangTC;
-      }
-      .navHeader--inside--leave {
-        width: 30px;
-        height: 30px;
-      }
-    }
-  }
-  .isRedirect {
-    display: none;
-  }
+  
 </style>
-<!-- <style lang="less" scoped>
-  :root {
-    --safe-area-inset-top   : 0px;
-    @supports (top: constant(safe-area-inset-top)){
-        --safe-area-inset-top   : constant(safe-area-inset-top);    
-    }
-    @supports (top: env(safe-area-inset-top)){
-        --safe-area-inset-top   : env(safe-area-inset-top);         
-    }
-  }
-  .navHeader {
-    &.isRedirect {
-      display: none;
-    }
-    position: fixed; 
-    top: 0;
-    background-color: #2eb6c7;
-    width: 100vw;
-    z-index: 100000;
-    max-height: 46px;
-    &--inside {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      // height: 80px;
-      // height: 45.5px;
-      padding-left: 20px;
-      padding-right: 20px;
-      // padding-top: var(--safe-area-inset-top);
-      padding-top: calc(var(--safe-area-inset-top) + 8px);
-      padding-bottom: 8px;
-      // padding-top: unquote(var(--safe-area-inset-top));
-      &--back {
-        width: 35px;
-        transform: translateY(2px);
-        >img {
-          width: 30px;
-          transform: rotate(180deg);
-        }
-      }
-      &--title {
-        width: 280px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        text-align: center;
-        color: #FFFFFF;
-        font-weight: 500;
-        font-size: 16px;
-        font-stretch: normal;
-        font-style: normal;
-        font-family: PingFangTC;
-      }
-      &--leave {
-        width: 30px;
-        height: 30px;
-      }
-    }
-  }
-</style> -->
