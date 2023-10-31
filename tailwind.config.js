@@ -27,6 +27,11 @@ module.exports = {
         '65': '65px',
       }
     },
+    screens: {
+      'tablet': { 'max': '949px' },
+      'laptop': { 'min': '950px', 'max': '1130px' },
+      'desktop': { 'min': '1131px' },
+    },
   },
   plugins: [],
 };

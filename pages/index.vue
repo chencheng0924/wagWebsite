@@ -45,18 +45,18 @@
       </div>
       <div class="img"><img src="../assets/img/indexConsult.jpg" alt=""></div>
     </div>
-    <div class="w-full pt-[103px] pb-[131px] bg-bg-purple flex flex-col items-center">
+    <div class="w-full pt-[103px] pb-[131px] desktop:bg-bg-purple flex flex-col items-center">
       <span class="text-black font-semibold text-2xl mb-[30px]">适用于各行业的解决方案</span>
-      <div class="bg-white rounded-[50px] py-[6px] px-[10px] flex gap-[12px]">
-        <div @click="tabChange(idx)" v-for="(tab, idx) in tabs" :key="idx + 'tab'" class="px-[28px] py-[10px] cursor-pointer" :class="{'bg-bg-tab': tab.active, 'rounded-[40px]': tab.active}">{{ tab.tab }}</div>
+      <div class="bg-white rounded-[50px] py-[6px] px-[10px] flex gap-[12px] border-black border-2 laptop:gap-[4px] tablet:gap-[4px]">
+        <div @click="tabChange(idx)" v-for="(tab, idx) in tabs" :key="idx + 'tab'" class="px-[28px] py-[10px] cursor-pointer laptop:px-[10px] tablet:px-[10px] tablet:py-[5px] laptop:py-[5px]" :class="{'bg-bg-tab': tab.active, 'rounded-[40px]': tab.active}">{{ tab.tab }}</div>
       </div>
-      <div class="mt-[85px] bg-white flex rounded-[50px]">
-        <img :src="commonStore.useAsset(`picc${nowIdx}.png`)" alt="">
-        <div class="px-[73px] py-[105px] flex flex-col items-start">
+      <div class="mt-[85px] bg-white flex rounded-[50px] laptop:bg-bg-purple tablet:bg-bg-purple">
+        <img :src="commonStore.useAsset(`picc${nowIdx}.png`)" alt="" class="laptop:w-[300px] tablet:w-[300px] object-cover rounded-[50px]">
+        <div class="px-[73px] py-[105px] flex flex-col items-start laptop:px-[20px] tablet:px-[20px] laptop:items-center tablet:items-center">
           <div class="flex">
             <img src="@/assets/img/star.svg" alt="star" v-for="i in 5">
           </div>
-          <div class="w-[300px] mt-[30px] leading-10 font-semibold">{{ tabs[nowIdx].txt }}</div>
+          <div class="w-[300px] mt-[30px] leading-10 font-semibold laptop:w-auto tablet:w-auto">{{ tabs[nowIdx].txt }}</div>
           <div class="bg-bg-yellow px-[10px] mt-[20px]">{{ tabs[nowIdx].type }}</div>
           <div v-if="tabs[nowIdx].use.length == 0" class="flex mt-[36px] gap-[52px]">
             <div class="flex flex-col items-center">
@@ -91,6 +91,14 @@
       </div>
     </div>
   </div>
+  <Transition name="slide-fade">
+    <get-mail v-if="showGetMail" @updateStatus="close()"/>
+  </Transition>
+  <Transition name="slide-fadetd">
+    <div v-if="showGetMailBtn" class="fixed bottom-0 left-[20px] border-2 px-[28px] py-[18px] rounded-[8px] bg-white cursor-pointer" @click="open()">
+      FREE Website
+    </div>
+  </Transition>
   <CommonBottomFooter/>
 </template>
 <script setup lang="ts">
@@ -142,6 +150,23 @@ const tabChange = (idx: number) => {
   tabs[idx].active = true
   nowIdx.value = idx
 }
+const showGetMail = ref(false)
+const showGetMailBtn = ref(false)
+const close = () => {
+  showGetMail.value = false
+  setTimeout(() => {
+    showGetMailBtn.value = true
+  }, 300)
+}
+const open = () => {
+  showGetMail.value = true
+  showGetMailBtn.value = false
+}
+onMounted(() => {
+  setTimeout(() => {
+    showGetMail.value = true
+  }, 1000)
+})
 // type eventItem = {
 //   title: string;
 //   router: string;
@@ -375,8 +400,21 @@ const tabChange = (idx: number) => {
 }
 
 .slide-fade-enter-from,
-.slide-fade-leave-to {
-  transform: translateX(20px);
+.slide-fadetd-leave-to {
+  transform: translateX(-20px);
+  opacity: 0;
+}
+.slide-fadetd-enter-active {
+  transition: all 0.5s ease-out;
+}
+
+.slide-fadetd-leave-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fadetd-enter-from,
+.slide-fadetd-leave-to {
+  transform: translateY(20px);
   opacity: 0;
 }
 </style>
