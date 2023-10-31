@@ -1,10 +1,16 @@
 <template>
   <CommonNavHeader/>
   <div class="wrapper">
-    <div class="banner">
+    <div class="banner" >
       <img src="../assets/icon/logo2.png" alt="">
       <div class="subtitle">全球商家信任首選NO.1</div>
       <div class="text">服务于全球各地超过500+华商，忠誠、專注、用心，贏得各行商家信任，一站式的线上营销服务帮您解除营销管理烦恼，开拓市场引流量至浅在客户群体，高口碑建立带起客户100%好评 ！</div>
+      <div class="featureListPhone">
+        <div class="featureItemPhone" v-for="(item, index) in featureItemPhone" :key="index">
+          <img src="../assets/icon/checked.png" alt="">
+          <div v-html="item.text" />
+        </div>
+      </div>
     </div>
     <div class="featureList">
       <div class="featureItem" v-for="(item, index) in featureItem" :key="index">
@@ -17,6 +23,7 @@
       <div class="serviceList">
         <div class="serviceItem" v-for="(item, index) in serviceItem" :key="index">
           <img class="img1" :src='item.img' alt="">
+          <img class="placeImg" src='../assets/icon/place.png' alt="">
           <div class="title">{{ item.title }}</div>
           <div v-html="item.text" />
           <img class="img2" src="../assets/icon/arrowRightRed.png" alt="">
@@ -44,6 +51,12 @@
         </div>
       </div>
       <div class="img"><img src="../assets/img/indexConsult.jpg" alt=""></div>
+    </div>
+    <div class="consultPhone">
+      <img src="../assets/img/indexConsult.jpg" alt="">
+      <div class="text1">营销</div>
+      <div class="text2">销售</div>
+      <div class="text3">设计</div>
     </div>
     <div class="w-full pt-[103px] pb-[131px] desktop:bg-bg-purple flex flex-col items-center">
       <span class="text-black font-semibold text-2xl mb-[30px]">适用于各行业的解决方案</span>
@@ -110,6 +123,14 @@ const featureItem = reactive([
   {text:'年轻创意团队<br>专业在美华人'},
   {text:'20+<br>规模性合作伙伴'},
   {text:'多方公关媒体<br>服务资源'},
+])
+const featureItemPhone = reactive([
+  {text:'3+以上专属客户经理'},
+  {text:'24小時专业服务团队'},
+  {text:'品牌出海最有效全平台推广'},
+  {text:'年轻创意团队在美华人'},
+  {text:'20+规模性合作伙伴'},
+  {text:'多方公关媒体服务资源'},
 ])
 const serviceItem = reactive([
   {title: '社群运营管理', text:'社交平台运营维护<br>24小时内差评回覆', img:'Img/icon/Shop.png'},
@@ -226,6 +247,22 @@ onMounted(() => {
       }
     }
   }
+  .featureListPhone {
+    display: none;
+    justify-content: space-evenly;
+    margin: 70px 0;
+    .featureItemPhone{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 5px;
+      div{
+        font-weight: 600;
+      }
+    }
+  }
   .serviceContainer{
     display: flex;
     flex-direction: column;
@@ -267,6 +304,9 @@ onMounted(() => {
           height: 43px;
           object-fit: cover;
           align-self: flex-start;
+        }
+        .placeImg{
+          display: none;
         }
         .img2{
           align-self: flex-end;
@@ -334,6 +374,9 @@ onMounted(() => {
       display: flex;
       align-items: center;
     }
+  }
+  .consultPhone{
+    display: none;
   }
   .glow{
     padding: 100px 24px;
@@ -416,5 +459,140 @@ onMounted(() => {
 .slide-fadetd-leave-to {
   transform: translateY(20px);
   opacity: 0;
+}
+
+@media screen and (max-width: 420px) { 
+  .wrapper{
+    .banner{
+      height: 345px;
+      padding: 16px 24px;
+      >img{
+        display: none;
+      }
+      .subtitle{
+        font-size: 14px;
+        font-weight: normal;
+      }
+      .text{
+        font-size: 8px;
+        width: 100%;
+      }
+      .featureListPhone {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        .featureItemPhone{
+          width: 45%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          background-color: #fff;
+          padding: 5px;
+          border-radius: 20px;
+          img{
+            width: 10px;
+            height: 10px;
+            margin: 0;
+          }
+          div{
+            color: #333;
+            white-space: nowrap;
+            font-size: 8px;
+            font-weight: normal;
+          }
+        }
+      }
+    }
+    .featureList{
+      display: none;
+    }
+    .serviceContainer{
+      padding: 30px 0;
+      background-color: #ffffff;
+      .serviceList{
+        padding: 0 16px ;
+        .serviceItem{
+          width: 28%;
+          height: 100px;
+          background-color: #efeeff;
+          padding: 5px;
+          .img1{
+            display: none;
+          }
+          .placeImg{
+            display: block;
+            align-self: flex-start;
+          }
+          .img2{
+            width: 20px;
+            height: 20px;
+            margin-top: 5px;
+          }
+          div, .title{
+            font-size: 8px;
+          }
+        }
+      }
+    }
+    .company{
+      padding: 0 5px 20px;
+    }
+    .consult{
+      display: none;
+    }
+    .consultPhone{
+      display: block;
+      position: relative;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+      .text1{
+        position: absolute;
+        top: -10px;
+        left: 60%;
+        background-color: #ff479f;
+        color: #fff;
+        padding: 5px 20px;
+        font-size: 10px;
+      }
+      .text2{
+        position: absolute;
+        top: 55%;
+        left: 35%;
+        background-color: #fdf300;
+        padding: 5px 20px;
+        font-size: 10px;
+      }
+      .text3{
+        position: absolute;
+        bottom: -10px;
+        left: 70%;
+        background-color: #e8750a;
+        color: #fff;
+        padding: 5px 20px;
+        font-size: 10px;
+      }
+    }
+    .glow{
+      padding: 50px 24px;
+      .title1{
+        font-size: 12px;
+        font-weight: normal;
+        margin: 20px 0;
+      }
+      .title2, .title3{
+        font-size: 12px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 950px) and (max-width: 1130px) { 
+    /* STYLES HERE */
+}
+@media screen and (min-width: 1131px) { 
+    /* STYLES HERE */
 }
 </style>
