@@ -1,7 +1,7 @@
 <template>
   <CommonNavHeader/>
-  <div class="wrapper">
-    <div class="banner" >
+  <div class="wrapper pt-[64px] pt-[64px]">
+    <div class="banner">
       <img src="../assets/icon/logo2.png" alt="">
       <div class="subtitle">全球商家信任首選NO.1</div>
       <div class="text">服务于全球各地超过500+华商，忠誠、專注、用心，贏得各行商家信任，一站式的线上营销服务帮您解除营销管理烦恼，开拓市场引流量至浅在客户群体，高口碑建立带起客户100%好评 ！</div>
@@ -60,25 +60,25 @@
     </div>
     <div class="w-full pt-[103px] pb-[131px] desktop:bg-bg-purple flex flex-col items-center">
       <span class="text-black font-semibold text-2xl mb-[30px]">适用于各行业的解决方案</span>
-      <div class="bg-white rounded-[50px] py-[6px] px-[10px] flex gap-[12px] border-black border-2 laptop:gap-[4px] tablet:gap-[4px]">
+      <div class="bg-white rounded-[50px] py-[6px] px-[10px] flex gap-[12px] border-black border-2 laptop:gap-[4px] tablet:gap-[2px] laptop:text-[8px] tablet:text-[8px] whitespace-nowrap">
         <div @click="tabChange(idx)" v-for="(tab, idx) in tabs" :key="idx + 'tab'" class="px-[28px] py-[10px] cursor-pointer laptop:px-[10px] tablet:px-[10px] tablet:py-[5px] laptop:py-[5px]" :class="{'bg-bg-tab': tab.active, 'rounded-[40px]': tab.active}">{{ tab.tab }}</div>
       </div>
-      <div class="mt-[85px] bg-white flex rounded-[50px] laptop:bg-bg-purple tablet:bg-bg-purple">
-        <img :src="commonStore.useAsset(`picc${nowIdx}.png`)" alt="" class="laptop:w-[300px] tablet:w-[300px] object-cover rounded-[50px]">
-        <div class="px-[73px] py-[105px] flex flex-col items-start laptop:px-[20px] tablet:px-[20px] laptop:items-center tablet:items-center">
+      <div class="mt-[85px] bg-white flex rounded-[50px] laptop:bg-bg-purple tablet:bg-bg-purple laptop:w-[305px] tablet:w-[305px] laptop:h-[181px] tablet:h-[181px]">
+        <img :src="commonStore.useAsset(`picc${nowIdx}.png`)" alt="" class="object-cover rounded-[50px] laptop:w-[147px] tablet:w-[147px] laptop:h-[181px] tablet:h-[181px]">
+        <div class="px-[73px] py-[105px] flex flex-col items-start laptop:px-[0px] tablet:px-[0px] laptop:py-[0px] tablet:py-[0px] laptop:items-center tablet:items-center">
           <div class="flex">
-            <img src="@/assets/img/star.svg" alt="star" v-for="i in 5">
+            <img src="@/assets/img/star.svg" alt="star" v-for="i in 5" class="laptop:w-[14px] tablet:w-[14px]">
           </div>
-          <div class="w-[300px] mt-[30px] leading-10 font-semibold laptop:w-auto tablet:w-auto">{{ tabs[nowIdx].txt }}</div>
-          <div class="bg-bg-yellow px-[10px] mt-[20px]">{{ tabs[nowIdx].type }}</div>
+          <div class="w-[300px] mt-[30px] leading-10 font-semibold laptop:text-[8px] tablet:text-[8px] laptop:w-[139px] tablet:w-[139px] laptop:mt-[5px] tablet:mt-[5px]">{{ tabs[nowIdx].txt }}</div>
+          <div class="bg-bg-yellow px-[10px] mt-[20px] laptop:mt-[5px] tablet:mt-[5px] laptop:text-[8px] tablet:text-[8px]">{{ tabs[nowIdx].type }}</div>
           <div v-if="tabs[nowIdx].use.length == 0" class="flex mt-[36px] gap-[52px]">
-            <div class="flex flex-col items-center">
+            <div class="flex flex-col items-center laptop:text-[8px] tablet:text-[8px]">
               <span>好评率</span>
-              <span class="font-semibold text-[32px]">＋22%</span>
+              <span class="font-semibold text-[32px] laptop:text-[8px] tablet:text-[8px]">＋22%</span>
             </div>
-            <div class="flex flex-col items-center">
+            <div class="flex flex-col items-center laptop:text-[8px] tablet:text-[8px]">
               <span>新客率</span>
-              <span class="font-semibold text-[32px]">＋47%</span>
+              <span class="font-semibold text-[32px] laptop:text-[8px] tablet:text-[8px]">＋47%</span>
             </div>
           </div>
           <div class="flex mt-[36px] gap-[24px]" v-else>
