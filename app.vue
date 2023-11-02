@@ -1,6 +1,8 @@
 <template>
   <div>
+    <CommonNavHeader/>
     <NuxtPage />
+    <CommonBottomFooter/>
     <commonRemindDialog v-if="apiStatus" :show="apiStatus" />
   </div>
 </template>

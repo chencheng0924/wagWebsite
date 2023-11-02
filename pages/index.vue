@@ -1,5 +1,4 @@
 <template>
-  <CommonNavHeader/>
   <div class="wrapper pt-[64px] pt-[64px]">
     <div class="banner">
       <img src="../assets/icon/logo2.png" alt="">
@@ -112,7 +111,6 @@
       FREE Website
     </div>
   </Transition>
-  <CommonBottomFooter/>
 </template>
 <script setup lang="ts">
 const commonStore = useCommon()
