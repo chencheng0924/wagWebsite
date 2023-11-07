@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   ssr: false,
   "modules": [
     'dayjs-nuxt',
+    // 'emailjs-com',
     '@nuxtjs/tailwindcss',
     ['@pinia/nuxt',
     {'autoImports': ['defineStore', 'acceptHMRUpdate']}],

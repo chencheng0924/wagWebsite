@@ -45,7 +45,7 @@
             <el-checkbox v-for="(item, index) in checkboxList" :key="index" :label="item"/>
           </el-checkbox-group>
         </el-form-item>
-        <div class="submitBtn" @click="submitForm(ruleFormRef)">提交</div>
+        <div :class="{'disabeld': disabled}" class="submitBtn" @click="submitForm(ruleFormRef)">提交</div>
       </el-form>
     </div>
   </div>
@@ -53,6 +53,9 @@
 
 <script setup lang="ts">
   import type { FormInstance, FormRules } from 'element-plus'
+  import emailjs from 'emailjs-com';
+  import { ElMessage } from 'element-plus'
+
   const ruleFormRef = ref<FormInstance>()
   const dataList = reactive([
   {title: '社群平台运营管理', context: '熟悉并掌握了拥有数十亿用户的社交媒体平台，包括Facebook、Instagram、Yelp和Google+等。通过深入分析您潜在客户的活动，制定精准的定位营销策略，以扩大您在潜在客户生活圈内的影响力，与受众群体和粉丝保持密切互动，建立牢固的关系。致力于全面的社交媒体营销和管理，目标是帮助与潜在客户建立持久的连接。', img: '/img/service/img1.png'},
@@ -66,7 +69,7 @@
   const checkboxList = ref([
     '在地商家推广计划', '电子邮件 & 短信营销', '社群平台运营', '付费广告投放', '网站设计开发维护', '小红书＆Tiktok运营', '媒体公关服务'
   ])
-  const tableForm = ref({
+  const tableForm = reactive({
     name: '',
     phone: '',
     email: '',
@@ -78,10 +81,39 @@
     email: [{ required: true, message: '請輸入电子邮件', trigger: 'blur' }],
     product: [{ required: true, message: '請選擇產品', trigger: 'blur' }],
   })
+  const successMes = () => {
+    ElMessage({
+    message: '已成功送出！',
+    type: 'success',
+  })
+  }
+  const disabled = ref(false)
   const submitForm = (formEl: FormInstance | undefined) => {
   if (!formEl) return
   formEl.validate((valid) => {
+    if(disabled.value) return
     if (valid) {
+      disabled.value = true
+      const mailData = {
+        userName: tableForm.name,
+        userPhone: tableForm.phone,
+        userEmail: tableForm.email,
+        userProject: tableForm.product
+      }
+      // chen
+      emailjs.send('service_qrg7ckr', 'template_fa6yf29', mailData, 'sXJoNaqcJEghZSWsk').then((res) => {
+        tableForm.name = ''
+        tableForm.phone = ''
+        tableForm.email = ''
+        tableForm.product = []
+        successMes()
+        disabled.value = false
+      })
+      // kuo
+      // emailjs.send('service_vdw8tir', 'template_vo4gb5s', mailData, '4mSPjBe9SlHmH21_8').then((res) => {
+      //   // successMes()
+      // })
+      console.log('tableForm', tableForm)
       console.log('submit!')
     } else {
       console.log('error submit!')
@@ -204,6 +236,10 @@
         padding: 5px 25px;
         border-radius: 20px;
         cursor: pointer;
+        &.disabeld{
+          background-color: grey;
+          color: #fff;
+        }
       }
     }
   }
