@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.11",
+    "aws-amplify": "^6.0.9",
     "element-plus": "^2.3.12",
     "emailjs-com": "^3.2.0",
     "pinia": "^2.1.6"
