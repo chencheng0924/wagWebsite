@@ -184,7 +184,7 @@ const open = () => {
 onMounted(() => {
   setTimeout(() => {
     showGetMail.value = true
-  }, 1000)
+  }, 1100)
 })
 // type eventItem = {
 //   title: string;
