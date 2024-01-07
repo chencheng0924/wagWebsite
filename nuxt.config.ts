@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
-    baseURL: '/wagWebsite/',
+    // baseURL: '/wagWebsite/',
     buildAssetsDir: '/assets/'
   },
   devtools: { enabled: true },
