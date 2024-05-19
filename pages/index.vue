@@ -1,55 +1,64 @@
 <template>
-  <div class="wrapper pt-[64px] pt-[64px]">
-    <div class="banner">
-      <img src="../assets/icon/logo2.png" alt="">
-      <div class="subtitle">全球商家信任首選NO.1</div>
-      <div class="text">服务于全球各地超过500+华商，忠誠、專注、用心，贏得各行商家信任，一站式的线上营销服务帮您解除营销管理烦恼，开拓市场引流量至浅在客户群体，高口碑建立带起客户100%好评 ！</div>
-      <div class="featureListPhone">
-        <div class="featureItemPhone" v-for="(item, index) in featureItemPhone" :key="index">
-          <img src="../assets/icon/checked.png" alt="">
-          <div v-html="item.text" />
+  <div class="wrapper pt-[64px]">
+    <div class="banner pt-[6rem] bg-[#e7750a]">
+      <div class="flex flex-col justify-center items-center mb-5">
+        <img class="mb-5" src="../assets/img/logo.svg" alt="wag">
+        <div class="text-black font-bold text-[36px]">全球商家信任首選NO.1</div>
+        <div class="text-black font-bold text-[36px]">线上行销谘询公司</div>
+      </div>
+      <div class="w-[65%] font-normal text-center text-[20px]">服务于全球各地超过500+华商，忠誠、專注、用心，贏得各行商家信任，一站式的线上营销服务帮您解除营销管理烦恼，开拓市场引流量至浅在客户群体，高口碑建立带起客户100%好评 ！</div>
+      <div class="flex justify-center flex-wrap py-[50px] px-0 bg-black mt-10">
+        <div class="flex justify-center w-[33%] my-5" v-for="(item, index) in featureItemPhone" :key="index">
+          <img class="!w-[36px] !h-[36px]" src="@/assets/icon/checked.png" alt="wag">
+          <div class="w-[150px] whitespace-nowrap" v-html="item.text" />
         </div>
       </div>
     </div>
-    <div class="featureList">
-      <div class="featureItem" v-for="(item, index) in featureItem" :key="index">
-        <img src="../assets/icon/feature.png" alt="">
-        <div v-html="item.text" />
-      </div>
-    </div>
-    <div class="serviceContainer">
-      <div class="subtitle">服務項目</div>
-      <div class="serviceList">
-        <div class="serviceItem" v-for="(item, index) in serviceItem" :key="index">
-          <img class="img1" :src='item.img' alt="">
-          <img class="placeImg" src='../assets/icon/place.png' alt="">
-          <div class="title">{{ item.title }}</div>
-          <div v-html="item.text" />
-          <img class="img2" src="../assets/icon/arrowRightRed.png" alt="">
+    <div class="w-full h-[100px] bg-black"></div>
+    <div class="flex h-[45rem] border-b-[2px] border-black border-solid">
+      <div class="w-[50%] pr-[5rem] bg-[#e7750a] flex justify-end items-center border-r-[2px] border-black border-solid">
+        <div class="flex flex-col gap-4">
+          <div class="text-[32px] font-bold">WHAT WE DO</div>
+          <div class="text-[24px] font-semibold">策略性行销服务项目</div>
+          <div class="text-[24px] font-semibold">全方位配合您的需要</div>
         </div>
       </div>
-    </div>
-    <div class="company">
-      <img v-for="(item, index) in companyList" :key="index" :src="item.img" alt="">
-    </div>
-    <div class="consult">
-      <div class="section">
-        <div class="subtitle">
-          <div>全球超过500+公司信任</div>
-          <div><span>一站式</span>推广服务+公司信任</div>
-        </div>
-        <div class="text">WAG流量專家始于美国纽约，服务于全球各地超过500+华商，一站式的线上营销服务帮您解除管理烦恼，透過最新的數位行銷技術，內部科技開發，建立品牌管理策略，在數位市場上協助客戶擴展業務、提升品牌形象，开拓市场及引流至浅在客户群体，高口碑建立带起客户100%好评 ！</div>
-        <div class="dotText">
-          <div v-for="(item, index) in consultTextList" :key="index"> 
-            <img src="../assets/icon/dotPink.png" alt="">
-            {{ item.text }}
+      <div class="w-[50%] bg-[#efede4] flex flex-col items-start justify-center">
+        <div class="flex flex-col justify-center pl-[5rem] gap-3">
+          <div v-for="(item, index) in serviceItem" :key="index" class="flex justify-between items-center bg-black px-5 h-[73px]">
+            <div class="w-[230px] text-white">{{ item.title }}</div>
+            <img :src="item.img" alt="">
+            <div>{{  }}</div>
           </div>
         </div>
-        <div class="button">
-          专业谘询
+      </div>
+    </div>
+    <div class="company bg-[#efede4]">
+      <img v-for="(item, index) in companyList" :key="index" :src="item.img" alt="">
+    </div>
+    <div class="bg-black flex flex-col justify-center items-center py-[8rem]">
+      <div class="text-white text-[32px] font-bold">为何选择WAG做为您的行销顾问?</div>
+      <div class="flex gap-5 py-[5rem]">
+        <div v-for="(item, index) in consultTextList" :key="index" class="text-black bg-[#e7750a] relative w-[21rem] h-[15rem] flex flex-col justify-center items-center">
+          <div class="absolute top-[-25%] left-[42%] text-white font-bold text-[65px]">{{ index + 1 }}</div>
+          <div class="text-[22px] font-bold">{{ item.text }}</div>
+          <div class="flex flex-col justify-center items-center my-3 gap-1">
+            <div v-for="(item2, index2) in item.content" :key="index2" class="text-[18px]">{{ item2 }}</div>
+          </div>
         </div>
       </div>
-      <div class="img"><img src="../assets/img/indexConsult.jpg" alt=""></div>
+      <div class="text-white border-[2px] border-solid border-white py-2 px-4">立即免费谘询</div>
+    </div>
+    <div class="h-[22rem] bg-[#e7750a] border-b-[2px] border-black border-solid flex flex-col justify-center items-center">
+      <div class="flex justify-center items-center w-[75%]">
+        <div v-for="(item, index) in conutList" :key="index" class="w-full flex flex-col justify-center items-center gap-10">
+          <div class="text-white font-bold text-[48px]">{{ item.conut }}</div>
+          <div class="text-white font-medium text-[24px]">{{ item.text }}</div>
+        </div>
+      </div>
+      <div class="w-[75%] h-[2px] mt-[3rem] bg-white relative">
+        <div v-for="(item, index) in 4" class="absolute top-[-25px] w-[2px] h-[25px] bg-white" :style="{left: `${33.3 * index}%`}"></div>
+      </div>
     </div>
     <div class="consultPhone">
       <img src="../assets/img/indexConsult.jpg" alt="">
@@ -90,17 +99,17 @@
       </div>
     </div>
     <div class="glow">
-      <div class="title1">WORLDWIDE AND GLOW</div>
-      <div class="title2">我们一起携手合作，让您的品牌曝光率不断提升！</div>
-      <div class="title3">了解为什么超過500+家企业选择 WAG</div>
+      <div class="title1">了解为什么超過500+家企业选择 WAG</div>
       <div class="btnList">
-        <div class="button1">
+        <div class="button2">
           专业谘询
         </div>
         <div class="button2">
           专业谘询
         </div>
       </div>
+      <div class="title3">WORLDWIDE AND GLOW</div>
+      <div class="title2">我们一起携手合作，让您的品牌曝光率不断提升！</div>
     </div>
   </div>
   <Transition name="slide-fade">
@@ -132,8 +141,8 @@ const featureItemPhone = reactive([
 ])
 const serviceItem = reactive([
   {title: '社群运营管理', text:'社交平台运营维护<br>24小时内差评回覆', img:'Img/icon/Shop.png'},
-  {title: '关键字广告投放', text:'新媒体广告曝光<br>精准受重分析 多方面曝光', img:'Img/icon/Chart.png'},
-  {title: '邮件＆简讯营销', text:'活動構想<br>数据分析报告', img:'Img/icon/Message.png'},
+  {title: '广告投放', text:'新媒体广告曝光<br>精准受重分析 多方面曝光', img:'Img/icon/Chart.png'},
+  {title: '电子邮件 & 短信营销', text:'活動構想<br>数据分析报告', img:'Img/icon/Message.png'},
   {title: '活动策划与地推', text:'邮寄卡片服务<br>专业客户经理', img:'Img/icon/Date.png'},
   {title: '网站设计开发', text:'预约系统页面<br>立即优化管理服务', img:'Img/icon/Shop.png'},
   {title: 'PR公关媒体服务', text:'海外媒体合作关系<br>对接推广资讯', img:'Img/icon/Calendar.png'},
@@ -148,10 +157,14 @@ const companyList = reactive([
   {img:'Img/company/trip.png'},
 ])
 const consultTextList = reactive([
-  {text:'一站式从策划至执行服务'},
-  {text:'客制化独特和高成效营销方案'},
-  {text:'配有多个24小时丰富营销经验技术'},
-  {text:'嵌入式营销团队，与您携手精准推广品牌'}
+  {text:'实现可持续性的营收增长', content: ['专业分析后的精准营销策略', '灵活的服务项目搭配', '增加行业竞争优势']},
+  {text:'完全值得您信任的专属团队', content: ['24小时在线的客户经理' , '免费谘询的各领域专家', '弹性的合作模式']},
+  {text:'减少大量时间与花费成本', content: ['整合多领域专家团队', '总结多年经验减少试错成本', '导入AI科技的行销工具']},
+])
+const conutList = reactive([
+  {text: '总客户数超过', conut: '500+'},
+  {text: '行业覆盖超过', conut: '20+'},
+  {text: '进行营销企划超过', conut: '645+'},
 ])
 const tabs = reactive([
   { tab: '餐馆', active: true, txt: '“提升季节性淡季客流量的问题，客人回头率提高，增加近4成新客流量”', type: '知名连锁餐厅品牌', use: [] },
@@ -203,30 +216,22 @@ onMounted(() => {
 
   .banner{
     width: 100%;
-    height: 676px;
-    background-size: cover;
-    background-image: linear-gradient(rgba(8, 26, 133, 0.8),rgba(7, 30, 131, 0.8)), url('../assets/img/indexBanner.jpg');
-    opacity: .9;
+    // background-size: cover;
+    // background-image: linear-gradient(rgba(8, 26, 133, 0.8),rgba(7, 30, 131, 0.8)), url('../assets/img/indexBanner.jpg');
+    // opacity: .9;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #fff;
     img{
-      width: 200px;
+      width: 320px;
       height: 130px;
-      object-fit: contain;
-      margin-bottom: 20px;
     }
     .subtitle{
       font-size: 40px;
       font-weight: bold;
       margin-bottom: 10px;
-    }
-    .text{
-      font-size: 20px;
-      width: 623px;
-      text-align: center;
     }
   }
   .featureList {
@@ -234,22 +239,6 @@ onMounted(() => {
     justify-content: space-evenly;
     margin: 70px 0;
     .featureItem{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      gap: 5px;
-      div{
-        font-weight: 600;
-      }
-    }
-  }
-  .featureListPhone {
-    display: none;
-    justify-content: space-evenly;
-    margin: 70px 0;
-    .featureItemPhone{
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -385,22 +374,19 @@ onMounted(() => {
     gap: 15px;
     background-color: #b25600;
     .title1{
-      color: #d8aa7f;
-      font-size: 36px;
+      font-size: 32px;
     }
     .title2{
-      color: #fff;
-      font-size: 32px;
       font-weight: bold;
+      font-size: 32px;
     }
     .title3{
-      color: #fff;
-      font-size: 24px;
+      font-size: 36px;
     }
     .btnList{
       display: flex;
       gap: 20px;
-      margin-top: 30px;
+      margin-top: 10px;
       .button1{
         display: flex;
         justify-content: center;
@@ -420,13 +406,13 @@ onMounted(() => {
         justify-content: center;
         align-items: center;
         background-color: #fff;
-        width: 111px;
-        height: 41px;
+        width: 184px;
+        height: 72px;
         text-align: center;
         padding: 16px 24px;
         border-radius: 50px;
         font-size: 15px;
-        color: #d96800;
+        border: 1px solid black;
         cursor: pointer;
       }
     }
@@ -474,33 +460,6 @@ onMounted(() => {
       .text{
         font-size: 8px;
         width: 100%;
-      }
-      .featureListPhone {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        .featureItemPhone{
-          width: 45%;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          background-color: #fff;
-          padding: 5px;
-          border-radius: 20px;
-          img{
-            width: 10px;
-            height: 10px;
-            margin: 0;
-          }
-          div{
-            color: #333;
-            white-space: nowrap;
-            font-size: 8px;
-            font-weight: normal;
-          }
-        }
       }
     }
     .featureList{
