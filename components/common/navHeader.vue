@@ -14,8 +14,8 @@ const showHamburger = ref(false)
 <template>
   <div class="flex bg-black pt-[22px] pl-[90px] pr-[90px] pb-[22px] justify-between items-center laptop:justify-center tablet:justify-center laptop:pt-[10px] laptop:pb-[10px] tablet:pt-[10px] tablet:pb-[10px] fixed top-0 left-0 z-50 w-full">
     <div class="flex items-end">
-      <img src="@/assets/icon/logo2.png" alt="logo" class="w-[65px]">
-      <span class="font-bold text-xl text-main-yellow">流量专家</span>
+      <img class="w-[99px] h-[42px]" src="@/assets/img/logo2.svg" alt="logo">
+      <span class="ml-2 font-bold text-xl text-white">流量专家</span>
     </div>
     <div class="flex gap-[32px] text-white laptop:hidden tablet:hidden">
       <NuxtLink v-for="(link, idx) in routerData" :key="idx + 'router'" :to="link.link">{{ link.linkName }}</NuxtLink>
