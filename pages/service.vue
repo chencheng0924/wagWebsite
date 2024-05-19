@@ -1,27 +1,31 @@
 <template>
   <div class="wrapper">
-    <div class="banner">
-      <span>WAG流量专家致力于提供高效的跨渠道在线流量转化服务。我们精通数字传媒工具，能够帮助您的品牌在网络世界中脱颖而出。每个项目配备专业团队，提供综合策划、为您量身定制最佳解决方案，全面推广您的品牌，确保您的品牌在竞争激烈的市场中取得卓越成果。</span>
+    <div class="flex bg-[#E7750C] items-center justify-center py-[58px] gap-[16px]">
+      <div class="flex flex-col w-[600px] gap-[20px]">
+        <img src="../assets/titles.png" alt="" class="w-[180px] object-contain">
+        <span class="font-bold">WAG流量专家致力于提供高效的跨渠道在线流量转化服务。我们精通数字传媒工具，能够帮助您的品牌在网络世界中脱颖而出。每个项目配备专业团队，提供综合策划、为您量身定制最佳解决方案，全面推广您的品牌，确保您的品牌在竞争激烈的市场中取得卓越成果。</span>
+        <div class="flex flex-wrap gap-[20px]">
+          <div v-for="text in bannerList" class="bannerBox rounded-[40px]">{{ text }}</div>
+        </div>
+      </div>
+      <div class="flex flex-wrap w-[500px] min-m-[500px] justify-center items-center">
+        <img v-for="p in 6" :src="`/img/${p}.png`" alt="" class="object-contain">
+      </div>
     </div>
-    <div class="content">
-      <div class="title">服務項目</div>
+    <div class="content bg-[#EFEDE4]">
       <div v-for="(item, index) in dataList" :key="index" class="contentItem">
         <img :src="item.img" alt="" v-if="index % 2 !== 0">
         <div class="textItem">
           <div class="textTitle">{{ item.title }}</div>
           <div class="text">{{ item.context }}</div>
-          <button class="button">了解更多</button>
+          <button class="button bg-[#000000]">了解更多</button>
         </div>
         <img :src="item.img" alt="" v-if="index % 2 === 0">
       </div>
     </div>
     <div class="form">
       <img src="../assets/img/service/img1.png" alt="">
-      <el-form
-        :model="tableForm"
-        ref="ruleFormRef"
-        :rules="rules"
-        require-asterisk-position="right">
+      <el-form :model="tableForm" ref="ruleFormRef" :rules="rules" require-asterisk-position="right">
         <div class="title">想要拓展您的生意吗？</div>
         <div class="text">
           <span>随着越来越多中小型企业希望融入网络营销，很多人困惑于如何着手。除了各种社交媒体平台，拥有一个高效的网站是您网络营销的核心资产。</span>
@@ -29,20 +33,20 @@
           <span>让我们为您提供一次免费基础咨询，为您指明下一步的方向。我们的专业团队将为您量身定制最适合的网络营销策略，助您实现业务的持续增长。</span>
         </div>
         <el-form-item prop="name">
-          <el-input clearable v-model="tableForm.name" size="default" placeholder="姓名"/>
+          <el-input clearable v-model="tableForm.name" size="default" placeholder="姓名" />
         </el-form-item>
         <div class="chooseList">
           <el-form-item prop="phone">
-            <el-input clearable v-model="tableForm.phone" size="default" placeholder="联络电话"/>
+            <el-input clearable v-model="tableForm.phone" size="default" placeholder="联络电话" />
           </el-form-item>
           <el-form-item prop="email">
-            <el-input clearable v-model="tableForm.email" size="default" placeholder="电子邮件"/>
+            <el-input clearable v-model="tableForm.email" size="default" placeholder="电子邮件" />
           </el-form-item>
         </div>
         <el-form-item>
           <div>感兴趣产品</div>
           <el-checkbox-group prop="product" v-model="tableForm.product" size="large">
-            <el-checkbox v-for="(item, index) in checkboxList" :key="index" :label="item"/>
+            <el-checkbox v-for="(item, index) in checkboxList" :key="index" :label="item" />
           </el-checkbox-group>
         </el-form-item>
         <div :class="{'disabeld': disabled}" class="submitBtn" @click="submitForm(ruleFormRef)">提交</div>
@@ -87,6 +91,9 @@
     type: 'success',
   })
   }
+  const bannerList = ref([
+    '社群运营管理', '广告投放', 'PR公关媒体服务', '网页设计开发', '电子邮件 & 短信营销', '活动策划与地推'
+  ])
   const disabled = ref(false)
   const submitForm = (formEl: FormInstance | undefined) => {
   if (!formEl) return
@@ -126,10 +133,14 @@
 <style scoped lang="scss">
 .wrapper{
   min-height: calc(100vh - 390px);
-  padding-top: 90px;
+  padding-top: 85px;
+  .bannerBox {
+    border: 1px solid black;
+    padding: 5px 28px;
+  }
   .banner{
     height: 324px;
-    background-color: #efeeff;
+    background-color: #E7750C;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -152,8 +163,10 @@
     .contentItem{
       display: flex;
       gap: 50px;
-      width: 70%;
-      margin: 70px 0;
+      width: 100%;
+      // margin: 70px 0;
+      padding: 87px 287px;
+      border-bottom: 1px solid black;
       .textItem{
         display: flex;
         flex-direction: column;
@@ -176,7 +189,6 @@
         }
         .button{
           width: 100px;
-          background-color: #ff479f;
           border-radius: 20px;
           color: #fff;
           padding: 5px 10px;
@@ -189,6 +201,7 @@
     justify-content: center;
     align-items: center;
     height: 600px;
+    background-color: black;
     img{
       width: 35%;
       height: 450px;
@@ -197,7 +210,7 @@
     :deep(.el-form){
       width: 50%;
       height: 100%;
-      background-color: #efeeff;
+      background-color: #E7750C;
       display: flex;
       flex-direction: column;
       justify-content: center;
