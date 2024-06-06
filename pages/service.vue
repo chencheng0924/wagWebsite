@@ -3,9 +3,13 @@
     <div class="flex bg-[#E7750C] items-center justify-center py-[58px] gap-[16px]">
       <div class="flex flex-col w-[600px] gap-[20px]">
         <img src="../assets/titles.png" alt="" class="w-[180px] object-contain">
-        <span class="font-bold">WAG流量专家致力于提供高效的跨渠道在线流量转化服务。我们精通数字传媒工具，能够帮助您的品牌在网络世界中脱颖而出。每个项目配备专业团队，提供综合策划、为您量身定制最佳解决方案，全面推广您的品牌，确保您的品牌在竞争激烈的市场中取得卓越成果。</span>
-        <div class="flex flex-wrap gap-[20px]">
-          <div v-for="text in bannerList" class="bannerBox rounded-[40px]">{{ text }}</div>
+        <span
+          class="font-bold">WAG流量专家致力于提供高效的跨渠道在线流量转化服务。我们精通数字传媒工具，能够帮助您的品牌在网络世界中脱颖而出。每个项目配备专业团队，提供综合策划、为您量身定制最佳解决方案，全面推广您的品牌，确保您的品牌在竞争激烈的市场中取得卓越成果。</span>
+        <div class="grid grid-cols-3 gap-[20px]">
+          <div v-for="text in bannerList" class="rounded-[40px] flex  items-center gap-[8px]">
+            <img src="../assets/ring.svg" alt="">
+            <span class="whitespace-nowrap">{{ text }}</span>
+          </div>
         </div>
       </div>
       <div class="flex flex-wrap w-[500px] min-m-[500px] justify-center items-center">
@@ -24,9 +28,9 @@
       </div>
     </div>
     <div class="form">
-      <img src="../assets/img/service/img1.png" alt="">
+      <img src="../assets/img/service/img1.png" alt="" class="formImg">
       <el-form :model="tableForm" ref="ruleFormRef" :rules="rules" require-asterisk-position="right">
-        <div class="title">想要拓展您的生意吗？</div>
+        <div class="title">想提高您的网路声量吗？</div>
         <div class="text">
           <span>随着越来越多中小型企业希望融入网络营销，很多人困惑于如何着手。除了各种社交媒体平台，拥有一个高效的网站是您网络营销的核心资产。</span>
           <hr>
@@ -202,10 +206,15 @@
     align-items: center;
     height: 600px;
     background-color: black;
+    position: relative;
+    padding-left: 450px;
     img{
+      left: 250px;
       width: 35%;
       height: 450px;
       justify-self: flex-end;
+      position: absolute;
+      object-fit: contain;
     }
     :deep(.el-form){
       width: 50%;

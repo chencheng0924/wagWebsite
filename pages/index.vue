@@ -112,14 +112,14 @@
       <div class="title2">我们一起携手合作，让您的品牌曝光率不断提升！</div>
     </div>
   </div>
-  <Transition name="slide-fade">
+  <!-- <Transition name="slide-fade">
     <get-mail v-if="showGetMail" @updateStatus="close()"/>
   </Transition>
   <Transition name="slide-fadetd">
     <div v-if="showGetMailBtn" class="fixed bottom-0 left-[20px] border-2 px-[28px] py-[18px] rounded-[8px] bg-white cursor-pointer" @click="open()">
       FREE Website
     </div>
-  </Transition>
+  </Transition> -->
 </template>
 <script setup lang="ts">
 const commonStore = useCommon()
