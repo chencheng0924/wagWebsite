@@ -13,15 +13,15 @@ const showHamburger = ref(false)
 </script>
 <template>
   <div class="flex bg-black pt-[22px] pl-[90px] pr-[90px] pb-[22px] justify-between items-center laptop:justify-center tablet:justify-center laptop:pt-[10px] laptop:pb-[10px] tablet:pt-[10px] tablet:pb-[10px] fixed top-0 left-0 z-50 w-full">
-    <div class="flex items-end">
+    <div class="flex items-end cursor-pointer" @click="router.push('/')">
       <img class="w-[99px] h-[42px]" src="@/assets/img/logo2.svg" alt="logo">
       <span class="ml-2 font-bold text-xl text-white">流量专家</span>
     </div>
     <div class="flex gap-[32px] text-white laptop:hidden tablet:hidden">
       <NuxtLink v-for="(link, idx) in routerData" :key="idx + 'router'" :to="link.link">{{ link.linkName }}</NuxtLink>
     </div>
-    <div class="w-[189px] h-[41px] border-white border-[1px] border-solid bg-main-yellow flex items-center justify-center text-white font-normal laptop:hidden tablet:hidden">
-      <span>免费咨询</span>
+    <div class="w-[156px] h-[41px] border-white border-[1px] border-solid bg-white flex items-center justify-center text-white font-normal laptop:hidden tablet:hidden">
+      <span class="text-black">免费咨询</span>
     </div>
     <img src="@/assets/img/menu.svg" class="absolute top-[16px] right-4 cursor-pointer desktop:hidden" @click="showHamburger = true">
   </div>
