@@ -367,6 +367,7 @@ onMounted(() => {
     align-items: center;
     gap: 15px;
     background-color: #E7750C;
+    border-bottom: 1px solid #fff;
     .title1{
       font-size: 32px;
       color: #fff;
