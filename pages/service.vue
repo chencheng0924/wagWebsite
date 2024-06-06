@@ -208,8 +208,9 @@
     background-color: black;
     position: relative;
     padding-left: 450px;
+    border-bottom: 1px solid white;
     img{
-      left: 250px;
+      left: 10%;
       width: 35%;
       height: 450px;
       justify-self: flex-end;
@@ -217,7 +218,7 @@
       object-fit: contain;
     }
     :deep(.el-form){
-      width: 50%;
+      width: 70%;
       height: 100%;
       background-color: #E7750C;
       display: flex;
