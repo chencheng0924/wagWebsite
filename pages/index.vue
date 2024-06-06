@@ -6,10 +6,10 @@
         <div class="text-black font-bold text-[36px]">全球商家信任首選NO.1</div>
         <div class="text-black font-bold text-[36px]">线上行销谘询公司</div>
       </div>
-      <div class="w-[65%] font-normal text-center text-[20px]">服务于全球各地超过500+华商，忠誠、專注、用心，贏得各行商家信任，一站式的线上营销服务帮您解除营销管理烦恼，开拓市场引流量至浅在客户群体，高口碑建立带起客户100%好评 ！</div>
-      <div class="flex justify-center flex-wrap py-[50px] px-0 bg-black mt-10">
-        <div class="flex justify-center w-[33%] my-5" v-for="(item, index) in featureItemPhone" :key="index">
-          <img class="!w-[36px] !h-[36px]" src="@/assets/icon/checked.png" alt="wag">
+      <div class="w-[60%] font-normal text-center text-[20px]">服务于全球各地超过500+华商，忠誠、專注、用心，贏得各行商家信任，一站式的线上营销服务帮您解除营销管理烦恼，开拓市场引流量至浅在客户群体，高口碑建立带起客户100%好评 ！</div>
+      <div class="flex justify-center flex-wrap py-[50px] px-0 bg-black mt-10 w-[65%]">
+        <div class="flex justify-center items-center gap-1 w-[33%] my-5" v-for="(item, index) in featureItemPhone" :key="index">
+          <img class="!w-[36px] !h-[36px]" src="@/assets/icon/whiteCheck.svg" alt="wag">
           <div class="w-[150px] whitespace-nowrap" v-html="item.text" />
         </div>
       </div>
@@ -24,17 +24,26 @@
         </div>
       </div>
       <div class="w-[50%] bg-[#efede4] flex flex-col items-start justify-center">
-        <div class="flex flex-col justify-center pl-[5rem] gap-3">
-          <div v-for="(item, index) in serviceItem" :key="index" class="flex justify-between items-center bg-black px-5 h-[73px]">
+        <div class="flex flex-col justify-center pl-[5rem] gap-3 w-full">
+          <div v-for="(item, index) in serviceItem" :key="index" class="flex justify-between items-center bg-black px-5 h-[73px] w-[70%]">
             <div class="w-[230px] text-white">{{ item.title }}</div>
-            <img :src="item.img" alt="">
-            <div>{{  }}</div>
+            <!-- <img :src="item.img" alt=""> -->
+            <img src="@/assets/icon/arrow-up.svg" alt="">
+            <!-- <div>{{  }}</div> -->
           </div>
         </div>
       </div>
     </div>
-    <div class="company bg-[#efede4]">
-      <img v-for="(item, index) in companyList" :key="index" :src="item.img" alt="">
+    <div class="company flex justify-center items-center gap-4 bg-[#efede4]">
+      <img class="w-[120px] h-[129px]" src="@/assets/img/company/google.png" alt="">
+      <img class="w-[273px] h-[83px]" src="@/assets/img/company/meta.png" alt="">
+      <img class="w-[134px] h-[127px]" src="@/assets/img/company/yelp.png" alt="">
+      <div class="flex flex-col">
+        <img class="w-[368px] h-[69px]" src="@/assets/img/company/tiktok.png" alt="">
+        <img class="w-[289px] h-[75px]" src="@/assets/img/company/tripadvisor.png" alt="">
+      </div>
+      <img class="w-[195px] h-[131px]" src="@/assets/img/company/aws.png" alt="">
+      <!-- <img v-for="(item, index) in companyList" :key="index" :src="item.img" alt=""> -->
     </div>
     <div class="bg-black flex flex-col justify-center items-center py-[8rem]">
       <div class="text-white text-[32px] font-bold">为何选择WAG做为您的行销顾问?</div>
@@ -146,15 +155,6 @@ const serviceItem = reactive([
   {title: '活动策划与地推', text:'邮寄卡片服务<br>专业客户经理', img:'Img/icon/Date.png'},
   {title: '网站设计开发', text:'预约系统页面<br>立即优化管理服务', img:'Img/icon/Shop.png'},
   {title: 'PR公关媒体服务', text:'海外媒体合作关系<br>对接推广资讯', img:'Img/icon/Calendar.png'},
-])
-const companyList = reactive([
-  {img:'Img/company/google.png'},
-  {img:'Img/company/yelp.png'},
-  {img:'Img/company/fb.png'},
-  {img:'Img/company/ig.png'},
-  {img:'Img/company/meta.png'},
-  {img:'Img/company/maps.png'},
-  {img:'Img/company/trip.png'},
 ])
 const consultTextList = reactive([
   {text:'实现可持续性的营收增长', content: ['专业分析后的精准营销策略', '灵活的服务项目搭配', '增加行业竞争优势']},
@@ -302,13 +302,7 @@ onMounted(() => {
     }
   }
   .company{
-    display: flex;
     padding: 32px 24px;
-    img{
-      object-fit: contain;
-      width: 14%;
-      height: 60px;
-    }
   }
   .consult{
     display: flex;
@@ -372,9 +366,10 @@ onMounted(() => {
     justify-content: center;
     align-items: center;
     gap: 15px;
-    background-color: #b25600;
+    background-color: #E7750C;
     .title1{
       font-size: 32px;
+      color: #fff;
     }
     .title2{
       font-weight: bold;
