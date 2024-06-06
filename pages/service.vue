@@ -32,9 +32,9 @@
       <el-form :model="tableForm" ref="ruleFormRef" :rules="rules" require-asterisk-position="right">
         <div class="title">想提高您的网路声量吗？</div>
         <div class="text">
-          <span>随着越来越多中小型企业希望融入网络营销，很多人困惑于如何着手。除了各种社交媒体平台，拥有一个高效的网站是您网络营销的核心资产。</span>
+          <span class="text-center">随着越来越多中小型企业希望融入网络营销，很多人困惑于如何着手。除了各种社交媒体平台，拥有一个高效的网站是您网络营销的核心资产。</span>
           <hr>
-          <span>让我们为您提供一次免费基础咨询，为您指明下一步的方向。我们的专业团队将为您量身定制最适合的网络营销策略，助您实现业务的持续增长。</span>
+          <span class="text-center">让我们为您提供一次免费基础咨询，为您指明下一步的方向。我们的专业团队将为您量身定制最适合的网络营销策略，助您实现业务的持续增长。</span>
         </div>
         <el-form-item prop="name">
           <el-input clearable v-model="tableForm.name" size="default" placeholder="姓名" />
@@ -66,13 +66,13 @@
 
   const ruleFormRef = ref<FormInstance>()
   const dataList = reactive([
-  {title: '社群平台运营管理', context: '熟悉并掌握了拥有数十亿用户的社交媒体平台，包括Facebook、Instagram、Yelp和Google+等。通过深入分析您潜在客户的活动，制定精准的定位营销策略，以扩大您在潜在客户生活圈内的影响力，与受众群体和粉丝保持密切互动，建立牢固的关系。致力于全面的社交媒体营销和管理，目标是帮助与潜在客户建立持久的连接。', img: '/img/service/img1.png'},
-  {title: '在地商家推广计划', context: '熟悉并掌握了拥有数十亿用户的社交媒体平台，包括Facebook、Instagram、Yelp和Google+等。通过深入分析您潜在客户的活动，制定精准的定位营销策略，以扩大您在潜在客户生活圈内的影响力，与受众群体和粉丝保持密切互动，建立牢固的关系。致力于全面的社交媒体营销和管理，目标是帮助与潜在客户建立持久的连接。', img: '/img/service/img2.png'},
-  {title: '电子邮件 & 短信营销', context: '熟悉并掌握了拥有数十亿用户的社交媒体平台，包括Facebook、Instagram、Yelp和Google+等。通过深入分析您潜在客户的活动，制定精准的定位营销策略，以扩大您在潜在客户生活圈内的影响力，与受众群体和粉丝保持密切互动，建立牢固的关系。致力于全面的社交媒体营销和管理，目标是帮助与潜在客户建立持久的连接。', img: '/img/service/img3.png'},
-  {title: '付费广告投放', context: '熟悉并掌握了拥有数十亿用户的社交媒体平台，包括Facebook、Instagram、Yelp和Google+等。通过深入分析您潜在客户的活动，制定精准的定位营销策略，以扩大您在潜在客户生活圈内的影响力，与受众群体和粉丝保持密切互动，建立牢固的关系。致力于全面的社交媒体营销和管理，目标是帮助与潜在客户建立持久的连接。', img: '/img/service/img4.png'},
-  {title: '网页设计开发维护', context: '熟悉并掌握了拥有数十亿用户的社交媒体平台，包括Facebook、Instagram、Yelp和Google+等。通过深入分析您潜在客户的活动，制定精准的定位营销策略，以扩大您在潜在客户生活圈内的影响力，与受众群体和粉丝保持密切互动，建立牢固的关系。致力于全面的社交媒体营销和管理，目标是帮助与潜在客户建立持久的连接。', img: '/img/service/img5.png'},
-  {title: '媒体公关服务', context: '熟悉并掌握了拥有数十亿用户的社交媒体平台，包括Facebook、Instagram、Yelp和Google+等。通过深入分析您潜在客户的活动，制定精准的定位营销策略，以扩大您在潜在客户生活圈内的影响力，与受众群体和粉丝保持密切互动，建立牢固的关系。致力于全面的社交媒体营销和管理，目标是帮助与潜在客户建立持久的连接。', img: '/img/service/img6.png'},
-  {title: '小红书 & TIKTOK运营', context: '熟悉并掌握了拥有数十亿用户的社交媒体平台，包括Facebook、Instagram、Yelp和Google+等。通过深入分析您潜在客户的活动，制定精准的定位营销策略，以扩大您在潜在客户生活圈内的影响力，与受众群体和粉丝保持密切互动，建立牢固的关系。致力于全面的社交媒体营销和管理，目标是帮助与潜在客户建立持久的连接。', img: '/img/service/img7.png'},
+    { title: '社群平台运营管理', context: '熟悉并掌握了拥有数十亿用户的社交媒体平台，包括Facebook、Instagram、Yelp和Google+等。通过深入分析您潜在客户的活动，制定精准的定位营销策略，以扩大您在潜在客户生活圈内的影响力，与受众群体和粉丝保持密切互动，建立牢固的关系。致力于全面的社交媒体营销和管理，目标是帮助与潜在客户建立持久的连接。', img: '/img/service/img1.png'},
+    { title: '广告投放', context: '广告投放团队拥有丰富的经验和技能，能够为您量身定制广告策略。大量后台数据支持，精准分析用户需求和市场趋势，确保广告投放效果最大化。针对跨海所需平台，我们有针对性地优化广告内容和投放策略，提升海外市场的覆盖和影响力。每月提供详尽的数据分析报告，帮助您全面了解广告效果，并进行及时调整和优化。。', img: '/img/service/img2.png'},
+    { title: '网页设计开发', context: '网站搭建是打造您品牌线上形象的第一步，团队具备丰富经验，能为您量身定制现代化、易用性强的网站。同时，注重SEO（搜索引擎优化），通过优化网站结构、内容和关键词，提升在搜索引擎中的排名，让更多潜在客户找到您的网站，实现品牌曝光和业务增长。', img: '/img/service/img3.png'},
+    { title: '电子邮件 & 短信营销', context: '电子邮件营销通过低成本、精准定向、内容定制和数据分析优化，帮助您建立稳固的客户关系并提升销售效果。而短信营销则具有高开放率、实时性强、互动性好的特点，能够快速触达用户并促成交易。结合两者，您可以全面提升营销效果，实现与客户更紧密的互动与合作。', img: '/img/service/img4.png'},
+    { title: 'PR公关媒体服务', context: '服务包括媒体关系管理、活动策划执行、危机公关处理等方面，为您量身打造有效的传播策略和解决方案。无论是推出新产品、宣传活动、品牌建设还是危机应对，我们都能为您提供专业支持，助您取得更大的成功。', img: '/img/service/img5.png'},
+    { title: '活动策划与地推', context: '熟悉并掌握了拥有数十亿用户的社交媒体平台，包括Facebook、Instagram、Yelp和Google+等。通过深入分析您潜在客户的活动，制定精准的定位营销策略，以扩大您在潜在客户生活圈内的影响力，与受众群体和粉丝保持密切互动，建立牢固的关系。致力于全面的社交媒体营销和管理，目标是帮助与潜在客户建立持久的连接。', img: '/img/service/img6.png'},
+  // {title: '小红书 & TIKTOK运营', context: '熟悉并掌握了拥有数十亿用户的社交媒体平台，包括Facebook、Instagram、Yelp和Google+等。通过深入分析您潜在客户的活动，制定精准的定位营销策略，以扩大您在潜在客户生活圈内的影响力，与受众群体和粉丝保持密切互动，建立牢固的关系。致力于全面的社交媒体营销和管理，目标是帮助与潜在客户建立持久的连接。', img: '/img/service/img7.png'},
   ])
   const checkboxList = ref([
     '在地商家推广计划', '电子邮件 & 短信营销', '社群平台运营', '付费广告投放', '网站设计开发维护', '小红书＆Tiktok运营', '媒体公关服务'
@@ -243,7 +243,11 @@
         --el-fill-color-blank: #efeeff;
         --el-border-color: #888888;
         --el-color-primary: #B15601;
+        .el-checkbox__label {
+          color: #333;
+        }
         .el-checkbox__inner{
+          background-color: transparent;
           border-color: #333;
         }
       }
@@ -253,8 +257,8 @@
         width: 80%;
       }
       .submitBtn{
-        background-color: #E8750A;
-        color: #fff;
+        background-color: white;
+        color: #333333;
         padding: 5px 25px;
         border-radius: 20px;
         cursor: pointer;
@@ -263,6 +267,16 @@
           color: #fff;
         }
       }
+    }
+  }
+}
+:deep(.el-form-item__content) {
+  .el-input {
+    .el-input__wrapper {
+      box-shadow: none;
+      border: 1px solid black;
+      background-color: transparent;
+      color: #D3D3D3
     }
   }
 }
