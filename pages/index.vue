@@ -3,29 +3,34 @@
     <div class="banner pt-[6rem] bg-[#e7750a]">
       <div class="flex flex-col justify-center items-center mb-5">
         <img class="mb-5" src="../assets/img/logo.svg" alt="wag">
-        <div class="text-black font-bold text-[36px]">全球商家信任首選NO.1</div>
-        <div class="text-black font-bold text-[36px]">线上行销谘询公司</div>
+        <div class="text-black font-bold text-[30px]">全球商家信任首選NO.1</div>
+        <div class="text-black font-bold text-[30px]">线上行销谘询公司</div>
       </div>
-      <div class="w-[60%] font-normal text-center text-[20px]">服务于全球各地超过500+华商，忠誠、專注、用心，贏得各行商家信任，一站式的线上营销服务帮您解除营销管理烦恼，开拓市场引流量至浅在客户群体，高口碑建立带起客户100%好评 ！</div>
-      <div class="flex justify-center flex-wrap py-[50px] px-0 bg-black mt-10 w-[65%]">
+      <div class="w-[40%] font-[400] text-center text-[18px]">服务于全球各地超过500+华商，忠誠、專注、用心，贏得各行商家信任，一站式的线上营销服务帮您解除营销管理烦恼，开拓市场引流量至浅在客户群体，高口碑建立带起客户100%好评 ！</div>
+      <div class="flex justify-center flex-wrap py-[50px] px-0 bg-[#efede4] mt-10 w-[65%] border-[1.5px] border-solid border-black">
         <div class="flex justify-center items-center gap-1 w-[33%] my-5" v-for="(item, index) in featureItemPhone" :key="index">
-          <img class="!w-[36px] !h-[36px]" src="@/assets/icon/whiteCheck.svg" alt="wag">
-          <div class="w-[150px] whitespace-nowrap" v-html="item.text" />
+          <img class="!w-[25px] !h-[25px]" src="@/assets/icon/blackCheck.svg" alt="wag">
+          <div class="w-[150px] whitespace-nowrap text-black font-[600]" v-html="item.text" />
         </div>
       </div>
     </div>
-    <div class="w-full h-[100px] bg-black"></div>
-    <div class="flex h-[45rem] border-b-[2px] border-black border-solid">
+    <div class="w-full h-[50px] bg-black"></div>
+    <div class="flex h-[45rem] border-b-[1px] border-black border-solid">
       <div class="w-[50%] pr-[5rem] bg-[#e7750a] flex justify-end items-center border-r-[2px] border-black border-solid">
-        <div class="flex flex-col gap-4">
-          <div class="text-[32px] font-bold">WHAT WE DO</div>
-          <div class="text-[24px] font-semibold">策略性行销服务项目</div>
-          <div class="text-[24px] font-semibold">全方位配合您的需要</div>
+        <div class="flex flex-col">
+          <div class="text-[38px] font-[400] text-white">WHAT WE DO</div>
+          <div class="text-[22px] font-[300] text-white tracking-[0.5rem]">策略性行销服务项目</div>
+          <div class="text-[22px] font-[300] text-white tracking-[0.5rem]">全方位配合您的需要</div>
+          <div class="mt-[2.5rem]">
+            <div class="bg-[#34E0A1] w-max px-4 py-1 shadow-xl mb-2 font-[400] text-[11px]">TRUSTED BY CUSTOMERS</div>
+            <img src="@/assets/icon/starGroup.svg" alt="">
+            <img src="@/assets/icon/commnd.svg" alt="">
+          </div>
         </div>
       </div>
       <div class="w-[50%] bg-[#efede4] flex flex-col items-start justify-center">
         <div class="flex flex-col justify-center pl-[5rem] gap-3 w-full">
-          <div v-for="(item, index) in serviceItem" :key="index" class="flex justify-between items-center bg-black px-5 h-[73px] w-[70%]">
+          <div v-for="(item, index) in serviceItem" :key="index" class="flex justify-between items-center bg-black px-5 h-[73px] w-[70%] cursor-pointer">
             <div class="w-[230px] text-white">{{ item.title }}</div>
             <!-- <img :src="item.img" alt=""> -->
             <img src="@/assets/icon/arrow-up.svg" alt="">
@@ -34,39 +39,37 @@
         </div>
       </div>
     </div>
-    <div class="company flex justify-center items-center gap-4 bg-[#efede4]">
-      <img class="w-[120px] h-[129px]" src="@/assets/img/company/google.png" alt="">
-      <img class="w-[273px] h-[83px]" src="@/assets/img/company/meta.png" alt="">
-      <img class="w-[134px] h-[127px]" src="@/assets/img/company/yelp.png" alt="">
-      <div class="flex flex-col">
-        <img class="w-[368px] h-[69px]" src="@/assets/img/company/tiktok.png" alt="">
-        <img class="w-[289px] h-[75px]" src="@/assets/img/company/tripadvisor.png" alt="">
-      </div>
-      <img class="w-[195px] h-[131px]" src="@/assets/img/company/aws.png" alt="">
+    <div class="company flex justify-center items-center gap-4 bg-[#efede4] border-b-[1px] border-black border-solid">
+      <img class="w-[102px] h-[110px]" src="@/assets/img/company/google.png" alt="">
+      <img class="w-[233px] h-[71px]" src="@/assets/img/company/meta.png" alt="">
+      <img class="w-[114px] h-[108px]" src="@/assets/img/company/yelp.png" alt="">
+      <img class="w-[314px] h-[59px]" src="@/assets/img/company/tiktok.png" alt="">
+      <img class="w-[166px] h-[112px]" src="@/assets/img/company/aws.png" alt="">
+      <img class="w-[247px] h-[64px]" src="@/assets/img/company/tripadvisor.png" alt="">
       <!-- <img v-for="(item, index) in companyList" :key="index" :src="item.img" alt=""> -->
     </div>
-    <div class="bg-black flex flex-col justify-center items-center py-[8rem]">
-      <div class="text-white text-[32px] font-bold">为何选择WAG做为您的行销顾问?</div>
+    <div class="bg-[#efede4] flex flex-col justify-center items-center py-[8rem]">
+      <div class="text-black text-[24px] font-bold">为何选择WAG做为您的行销顾问?</div>
       <div class="flex gap-5 py-[5rem]">
-        <div v-for="(item, index) in consultTextList" :key="index" class="text-black bg-[#e7750a] relative w-[21rem] h-[15rem] flex flex-col justify-center items-center">
-          <div class="absolute top-[-25%] left-[42%] text-white font-bold text-[65px]">{{ index + 1 }}</div>
-          <div class="text-[22px] font-bold">{{ item.text }}</div>
-          <div class="flex flex-col justify-center items-center my-3 gap-1">
+        <div v-for="(item, index) in consultTextList" :key="index" class="text-black bg-[#e7750a] relative w-[21rem] h-[15rem] flex flex-col justify-evenly items-center">
+          <div class="absolute top-[-30%] left-[42%] text-black font-bold text-[65px]">{{ index + 1 }}</div>
+          <div class="text-[22px] flex justify-center items-center font-bold h-[30%] w-full border-[1px] border-black border-solid border-b-[0px]">{{ item.text }}</div>
+          <div class="flex flex-col justify-center items-center gap-1 bg-[#efede4] w-full h-[70%] border-[1px] border-black border-solid">
             <div v-for="(item2, index2) in item.content" :key="index2" class="text-[18px]">{{ item2 }}</div>
           </div>
         </div>
       </div>
-      <div class="text-white border-[2px] border-solid border-white py-2 px-4">立即免费谘询</div>
+      <div class="text-white bg-black border-[2px] border-solid border-black py-2 px-4 cursor-pointer">立即免费谘询</div>
     </div>
-    <div class="h-[22rem] bg-[#e7750a] border-b-[2px] border-black border-solid flex flex-col justify-center items-center">
+    <div class="h-[22rem] bg-[#e7750a] border-b-[1px] border-black border-solid flex flex-col justify-center items-center">
       <div class="flex justify-center items-center w-[75%]">
         <div v-for="(item, index) in conutList" :key="index" class="w-full flex flex-col justify-center items-center gap-10">
-          <div class="text-white font-bold text-[48px]">{{ item.conut }}</div>
-          <div class="text-white font-medium text-[24px]">{{ item.text }}</div>
+          <div class="text-black font-bold text-[48px]">{{ item.conut }}</div>
+          <div class="text-black font-medium text-[24px]">{{ item.text }}</div>
         </div>
       </div>
-      <div class="w-[75%] h-[2px] mt-[3rem] bg-white relative">
-        <div v-for="(item, index) in 4" class="absolute top-[-25px] w-[2px] h-[25px] bg-white" :style="{left: `${33.3 * index}%`}"></div>
+      <div class="w-[75%] h-[2px] mt-[3rem] bg-black relative">
+        <div v-for="(item, index) in 4" class="absolute top-[-25px] w-[2px] h-[25px] bg-black" :style="{left: `${33.3 * index}%`}"></div>
       </div>
     </div>
     <div class="consultPhone">
