@@ -6,9 +6,12 @@
         <div class="text-black font-bold text-[30px]">全球商家信任首選NO.1</div>
         <div class="text-black font-bold text-[30px]">线上行销谘询公司</div>
       </div>
-      <div class="w-[40%] font-[400] text-center text-[18px]">服务于全球各地超过500+华商，忠誠、專注、用心，贏得各行商家信任，一站式的线上营销服务帮您解除营销管理烦恼，开拓市场引流量至浅在客户群体，高口碑建立带起客户100%好评 ！</div>
-      <div class="flex justify-center flex-wrap py-[50px] px-0 bg-[#efede4] mt-10 w-[65%] border-[1.5px] border-solid border-black">
-        <div class="flex justify-center items-center gap-1 w-[33%] my-5" v-for="(item, index) in featureItemPhone" :key="index">
+      <div class="w-[40%] font-[400] text-center text-[18px]">
+        服务于全球各地超过500+华商，忠誠、專注、用心，贏得各行商家信任，一站式的线上营销服务帮您解除营销管理烦恼，开拓市场引流量至浅在客户群体，高口碑建立带起客户100%好评 ！</div>
+      <div
+        class="flex justify-center flex-wrap py-[50px] px-0 bg-[#efede4] mt-10 w-[65%] border-[1.5px] border-solid border-black">
+        <div class="flex justify-center items-center gap-1 w-[33%] my-5" v-for="(item, index) in featureItemPhone"
+          :key="index">
           <img class="!w-[25px] !h-[25px]" src="@/assets/icon/blackCheck.svg" alt="wag">
           <div class="w-[150px] whitespace-nowrap text-black font-[600]" v-html="item.text" />
         </div>
@@ -16,7 +19,8 @@
     </div>
     <div class="w-full h-[50px] bg-black"></div>
     <div class="flex h-[45rem] border-b-[1px] border-black border-solid">
-      <div class="w-[50%] pr-[5rem] bg-[#e7750a] flex justify-end items-center border-r-[2px] border-black border-solid">
+      <div
+        class="w-[50%] pr-[5rem] bg-[#e7750a] flex justify-end items-center border-r-[2px] border-black border-solid">
         <div class="flex flex-col">
           <div class="text-[38px] font-[400] text-white">WHAT WE DO</div>
           <div class="text-[22px] font-[300] text-white tracking-[0.5rem]">策略性行销服务项目</div>
@@ -30,7 +34,8 @@
       </div>
       <div class="w-[50%] bg-[#efede4] flex flex-col items-start justify-center">
         <div class="flex flex-col justify-center pl-[5rem] gap-3 w-full">
-          <div v-for="(item, index) in serviceItem" :key="index" class="flex justify-between items-center bg-black px-5 h-[73px] w-[70%] cursor-pointer">
+          <div v-for="(item, index) in serviceItem" :key="index"
+            class="flex justify-between items-center bg-black px-5 h-[73px] w-[70%] cursor-pointer">
             <div class="w-[230px] text-white">{{ item.title }}</div>
             <!-- <img :src="item.img" alt=""> -->
             <img src="@/assets/icon/arrow-up.svg" alt="">
@@ -51,25 +56,32 @@
     <div class="bg-[#efede4] flex flex-col justify-center items-center py-[8rem]">
       <div class="text-black text-[24px] font-bold">为何选择WAG做为您的行销顾问?</div>
       <div class="flex gap-5 py-[5rem]">
-        <div v-for="(item, index) in consultTextList" :key="index" class="text-black bg-[#e7750a] relative w-[21rem] h-[15rem] flex flex-col justify-evenly items-center">
+        <div v-for="(item, index) in consultTextList" :key="index"
+          class="text-black bg-[#e7750a] relative w-[21rem] h-[15rem] flex flex-col justify-evenly items-center">
           <div class="absolute top-[-30%] left-[42%] text-black font-bold text-[65px]">{{ index + 1 }}</div>
-          <div class="text-[22px] flex justify-center items-center font-bold h-[30%] w-full border-[1px] border-black border-solid border-b-[0px]">{{ item.text }}</div>
-          <div class="flex flex-col justify-center items-center gap-1 bg-[#efede4] w-full h-[70%] border-[1px] border-black border-solid">
+          <div
+            class="text-[22px] flex justify-center items-center font-bold h-[30%] w-full border-[1px] border-black border-solid border-b-[0px]">
+            {{ item.text }}</div>
+          <div
+            class="flex flex-col justify-center items-center gap-1 bg-[#efede4] w-full h-[70%] border-[1px] border-black border-solid">
             <div v-for="(item2, index2) in item.content" :key="index2" class="text-[18px]">{{ item2 }}</div>
           </div>
         </div>
       </div>
       <div class="text-white bg-black border-[2px] border-solid border-black py-2 px-4 cursor-pointer">立即免费谘询</div>
     </div>
-    <div class="h-[22rem] bg-[#e7750a] border-b-[1px] border-black border-solid flex flex-col justify-center items-center">
+    <div
+      class="h-[22rem] bg-[#e7750a] border-b-[1px] border-black border-solid flex flex-col justify-center items-center">
       <div class="flex justify-center items-center w-[75%]">
-        <div v-for="(item, index) in conutList" :key="index" class="w-full flex flex-col justify-center items-center gap-10">
+        <div v-for="(item, index) in conutList" :key="index"
+          class="w-full flex flex-col justify-center items-center gap-10">
           <div class="text-black font-bold text-[48px]">{{ item.conut }}</div>
           <div class="text-black font-medium text-[24px]">{{ item.text }}</div>
         </div>
       </div>
       <div class="w-[75%] h-[2px] mt-[3rem] bg-black relative">
-        <div v-for="(item, index) in 4" class="absolute top-[-25px] w-[2px] h-[25px] bg-black" :style="{left: `${33.3 * index}%`}"></div>
+        <div v-for="(item, index) in 4" class="absolute top-[-25px] w-[2px] h-[25px] bg-black"
+          :style="{left: `${33.3 * index}%`}"></div>
       </div>
     </div>
     <div class="consultPhone">
@@ -78,27 +90,37 @@
       <div class="text2">销售</div>
       <div class="text3">设计</div>
     </div>
-    <div class="w-full pt-[103px] pb-[131px] desktop:bg-bg-purple flex flex-col items-center">
-      <span class="text-black font-semibold text-2xl mb-[30px]">适用于各行业的解决方案</span>
-      <div class="bg-white rounded-[50px] py-[6px] px-[10px] flex gap-[12px] border-black border-2 laptop:gap-[4px] tablet:gap-[2px] laptop:text-[8px] tablet:text-[8px] whitespace-nowrap">
-        <div @click="tabChange(idx)" v-for="(tab, idx) in tabs" :key="idx + 'tab'" class="px-[28px] py-[10px] cursor-pointer laptop:px-[10px] tablet:px-[10px] tablet:py-[5px] laptop:py-[5px]" :class="{'bg-bg-tab': tab.active, 'rounded-[40px]': tab.active}">{{ tab.tab }}</div>
+    <div class="w-full pt-[103px] pb-[131px] desktop:bg-[#EFEDE4] flex flex-col items-center">
+      <span class="text-black font-semibold text-[20px] mb-[30px]">适用于各行业的解决方案</span>
+      <div
+        class="rounded-[50px] py-[6px] px-[10px] flex gap-[12px] border-[1px] border-solid border-black laptop:gap-[4px] tablet:gap-[2px] laptop:text-[8px] tablet:text-[8px] whitespace-nowrap">
+        <div @click="tabChange(idx)" v-for="(tab, idx) in tabs" :key="idx + 'tab'"
+          class="px-[28px] py-[10px] cursor-pointer laptop:px-[10px] tablet:px-[10px] tablet:py-[5px] laptop:py-[5px]"
+          :class="{'bg-[#000000] text-white': tab.active, 'rounded-[40px]': tab.active}">{{ tab.tab }}</div>
       </div>
-      <div class="mt-[85px] bg-white flex rounded-[50px] laptop:bg-bg-purple tablet:bg-bg-purple laptop:w-[305px] tablet:w-[305px] laptop:h-[181px] tablet:h-[181px]">
-        <img :src="commonStore.useAsset(`picc${nowIdx}.png`)" alt="" class="object-cover rounded-[50px] laptop:w-[147px] tablet:w-[147px] laptop:h-[181px] tablet:h-[181px]">
-        <div class="px-[73px] py-[105px] flex flex-col items-start laptop:px-[0px] tablet:px-[0px] laptop:py-[0px] tablet:py-[0px] laptop:items-center tablet:items-center">
+      <div
+        class="mt-[85px] bg-white border-[1px] border-solid border-black flex rounded-[50px] laptop:bg-bg-purple tablet:bg-bg-purple laptop:w-[305px] tablet:w-[305px] laptop:h-[181px] tablet:h-[181px]">
+        <img :src="commonStore.useAsset(`picc${nowIdx}.png`)" alt=""
+          class="object-cover rounded-[50px] laptop:w-[147px] tablet:w-[147px] laptop:h-[181px] tablet:h-[181px]">
+        <div
+          class="px-[73px] py-[105px] flex flex-col items-start laptop:px-[0px] tablet:px-[0px] laptop:py-[0px] tablet:py-[0px] laptop:items-center tablet:items-center">
           <div class="flex">
             <img src="@/assets/img/star.svg" alt="star" v-for="i in 5" class="laptop:w-[14px] tablet:w-[14px]">
           </div>
-          <div class="w-[300px] mt-[30px] leading-10 font-semibold laptop:text-[8px] tablet:text-[8px] laptop:w-[139px] tablet:w-[139px] laptop:mt-[5px] tablet:mt-[5px]">{{ tabs[nowIdx].txt }}</div>
-          <div class="bg-bg-yellow px-[10px] mt-[20px] laptop:mt-[5px] tablet:mt-[5px] laptop:text-[8px] tablet:text-[8px]">{{ tabs[nowIdx].type }}</div>
+          <div
+            class="w-[300px] mt-[30px] text-[15px] leading-10 font-semibold laptop:text-[8px] tablet:text-[8px] laptop:w-[139px] tablet:w-[139px] laptop:mt-[5px] tablet:mt-[5px]">
+            {{ tabs[nowIdx].txt }}</div>
+          <div
+            class="bg-[#000000] text-white px-[10px] mt-[20px] text-[14px] laptop:mt-[5px] tablet:mt-[5px] laptop:text-[8px] tablet:text-[8px]">
+            {{ tabs[nowIdx].type }}</div>
           <div v-if="tabs[nowIdx].use.length == 0" class="flex mt-[36px] gap-[52px]">
             <div class="flex flex-col items-center laptop:text-[8px] tablet:text-[8px]">
               <span>好评率</span>
-              <span class="font-semibold text-[32px] laptop:text-[8px] tablet:text-[8px]">＋22%</span>
+              <span class="font-[600] text-[24px] laptop:text-[8px] tablet:text-[8px]">＋22%</span>
             </div>
             <div class="flex flex-col items-center laptop:text-[8px] tablet:text-[8px]">
               <span>新客率</span>
-              <span class="font-semibold text-[32px] laptop:text-[8px] tablet:text-[8px]">＋47%</span>
+              <span class="font-[600] text-[24px] laptop:text-[8px] tablet:text-[8px]">＋47%</span>
             </div>
           </div>
           <div class="flex mt-[36px] gap-[24px]" v-else>
@@ -111,17 +133,15 @@
       </div>
     </div>
     <div class="glow">
-      <div class="title1">了解为什么超過500+家企业选择 WAG</div>
+      <div class="title1">了解为何超過500+家企业选择 WAG Marketing</div>
+      <div class="text-[24px] font-[400] mt-[49px]">WORLDWIDE AND GLOW</div>
+      <div class="text-[24px] font-[700]">我们一起携手合作，让您的品牌曝光率不断提升！</div>
       <div class="btnList">
-        <div class="button2">
+        <a class="rounded-[20px] border-[1px] border-solid border-black px-[36px] py-[8px] bg-white h-[56px] flex justify-center items-center cursor-pointer"
+          href="mailto:contact@wag.marketing">
           专业谘询
-        </div>
-        <div class="button2">
-          专业谘询
-        </div>
+        </a>
       </div>
-      <div class="title3">WORLDWIDE AND GLOW</div>
-      <div class="title2">我们一起携手合作，让您的品牌曝光率不断提升！</div>
     </div>
   </div>
   <!-- <Transition name="slide-fade">
@@ -372,7 +392,8 @@ onMounted(() => {
     background-color: #E7750C;
     border-bottom: 1px solid #fff;
     .title1{
-      font-size: 32px;
+      font-weight: 600;
+      font-size: 36px;
       color: #fff;
     }
     .title2{
