@@ -25,12 +25,16 @@ module.exports = {
       },
       width: {
         '65': '65px',
+      },
+      height: {
+        '100vh-header': 'calc(100vh - 80px)'
       }
     },
     screens: {
       'tablet': { 'max': '949px' },
       'laptop': { 'min': '950px', 'max': '1130px' },
-      'desktop': { 'min': '1131px' },
+      'mac': {'min': '1131px', 'max': '1440px'},
+      'desktop': { 'min': '1441px' },
     },
   },
   plugins: [],
