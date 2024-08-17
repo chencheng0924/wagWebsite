@@ -92,7 +92,7 @@
       <div class="text2">销售</div>
       <div class="text3">设计</div>
     </div>
-    <div class="w-full desktop:bg-[#EFEDE4] flex flex-col items-center vh justify-center">
+    <div class="w-full desktop:bg-[#EFEDE4] flex flex-col items-center justify-center pt-[110px] pb-[159px]">
       <div class="flex flex-col items-center">
         <span class="text-black font-semibold text-[20px] mb-[30px]">适用于各行业的解决方案</span>
         <div
