@@ -1,30 +1,63 @@
 <template>
-  <div class="wrapper pt-[64px]">
-    <div class="banner pt-[6rem] bg-[#e7750a]">
+  <div class="wrapper desktop:pt-[64px]">
+    <div class="banner pt-[6rem] bg-[#e7750a] tablet:!pb-[3rem] tablet:!pt-[6rem]">
       <div class="flex flex-col justify-center items-center mb-5">
-        <img class="mb-5" src="../assets/img/logo.svg" alt="wag">
-        <div class="text-black font-bold text-[30px] mac:text-[24px]">全球商家信任首選NO.1</div>
-        <div class="text-black font-bold text-[30px] mac:text-[24px]">线上行销谘询公司</div>
+        <img class="mb-5 tablet:hidden" src="../assets/img/logo.svg" alt="wag">
+        <div class="text-black font-bold text-[30px] mac:text-[24px] tablet:text-[20px]">全球商家信任首選NO.1</div>
+        <div class="text-black font-bold text-[30px] mac:text-[24px] tablet:text-[20px]">线上行销谘询公司</div>
       </div>
-      <div class="w-[40%] font-[400] text-center text-[18px] mac:text-[16px]">
+      <div class="w-[35%] font-[400] text-center text-[18px] mac:text-[16px] tablet:w-[70%] tablet:text-[14px]">
         服务于全球各地超过500+华商，忠誠、專注、用心，贏得各行商家信任，一站式的线上营销服务帮您解除营销管理烦恼，开拓市场引流量至浅在客户群体，高口碑建立带起客户100%好评 ！</div>
       <div
-        class="flex justify-center flex-wrap py-[50px] px-0 bg-[#efede4] mt-10 w-[65%] border-[1.5px] border-solid border-black">
-        <div class="flex justify-center items-center gap-1 w-[33%] my-5" v-for="(item, index) in featureItemPhone"
+        class="flex justify-center flex-wrap py-[50px] px-0 bg-[#efede4] mt-10 w-[55%] border-[1.5px] border-solid border-black tablet:flex-col tablet:items-center tablet:rounded-[1.5rem] tablet:w-[70%]">
+        <div class="flex justify-center items-center gap-1 w-[33%] my-5 tablet:flex-col tablet:m-0 tablet:gap-[1rem] tablet:w-full" v-for="(item, index) in featureItemPhone"
           :key="index">
-          <img class="!w-[25px] !h-[25px]" src="@/assets/icon/blackCheck.svg" alt="wag">
-          <div class="w-[150px] whitespace-nowrap text-black font-[600] mac:text-[15px]" v-html="item.text" />
+          <img class="!w-[25px] !h-[25px] tablet:hidden" src="@/assets/icon/blackCheck.svg" alt="wag">
+          <div class="w-[150px] whitespace-nowrap text-black font-[600] mac:text-[15px] tablet:text-center tablet:w-full" v-html="item.text" />
+          <img class="!w-2 !h-2 mb-[1rem]" :class="{'hidden': index == featureItemPhone.length - 1}" src="@/assets/icon/blackDot.svg" alt="wag">
         </div>
       </div>
     </div>
-    <div class="w-full h-[50px] bg-black"></div>
-    <div class="flex h-[45rem] border-b-[1px] border-black border-solid">
+    <div class="w-full h-[50px] bg-black tablet:hidden"></div>
+    <div class="company hidden flex-col justify-center items-center gap-4 bg-[#efede4] border-b-[1px] border-black border-solid tablet:flex">
+      <div class="flex items-center gap-[1rem]">
+        <img class="w-[45px] h-[48px]" src="@/assets/img/company/google.png" alt="">
+        <img class="w-[47px] h-[44px]" src="@/assets/img/company/yelp.png" alt="">
+        <img class="w-[80px] h-[54px]" src="@/assets/img/company/aws.png" alt="">
+      </div>
+      <img class="w-[208px] h-[39px]" src="@/assets/img/company/tiktok.png" alt="">
+      <div class="flex items-center gap-[11px]">
+        <img class="w-[116px] h-[36px]" src="@/assets/img/company/meta.png" alt="">
+        <img class="w-[126px] h-[32px]" src="@/assets/img/company/tripadvisor.png" alt="">
+      </div>
+      <!-- <img v-for="(item, index) in companyList" :key="index" :src="item.img" alt=""> -->
+    </div>
+    <div class="hidden justify-center items-center bg-[#e7750a] py-[4rem] tablet:flex tablet:flex-col">
+      <div class="flex flex-col justify-center items-center">
+        <div class="text-[20px] font-[400] text-white textOutline mb-3 tracking-[0.3rem]">WHAT WE DO</div>
+        <div class="text-[16px] font-[300] text-white tracking-[0.5rem]">策略性行销服务项目</div>
+        <div class="text-[16px] font-[300] text-white tracking-[0.5rem]">全方位配合您的需要</div>
+      </div>
+      <div class="flex flex-col my-[2rem]">
+        <div v-for="(item, index) in serviceItem" :key="index"
+            class="flex items-center px-5 h-[62px] w-full cursor-pointer gap-2">
+            <img src="@/assets/icon/arrow-right.svg" alt="">
+            <div class=" text-black text-[15px] underline underline-offset-4 font-[600]">{{ item.title }}</div>
+          </div>
+      </div>
+      <div class="flex flex-col gap-2">
+        <div class="bg-[#34E0A1] w-max px-4 py-1 shadow-xl mb-2 font-[400] text-[14px]">TRUSTED BY CUSTOMERS</div>
+        <img class="scale-125" src="@/assets/icon/commndPhone.svg" alt="">
+        <img class="scale-75" src="@/assets/icon/starGroup.svg" alt="">
+      </div>
+    </div>
+    <div class="flex h-[45rem] border-b-[1px] border-black border-solid tablet:hidden">
       <div
         class="w-[50%] pr-[5rem] bg-[#e7750a] flex justify-end items-center border-r-[2px] border-black border-solid">
         <div class="flex flex-col">
-          <div class="text-[38px] font-[400] text-white textOutline">WHAT WE DO</div>
-          <div class="text-[22px] font-[300] text-white tracking-[0.5rem]">策略性行销服务项目</div>
-          <div class="text-[22px] font-[300] text-white tracking-[0.5rem]">全方位配合您的需要</div>
+          <div class="text-[30px] font-[400] text-white textOutline mb-5">WHAT WE DO</div>
+          <div class="text-[20px] font-[300] text-white tracking-[0.5rem]">策略性行销服务项目</div>
+          <div class="text-[20px] font-[300] text-white tracking-[0.5rem]">全方位配合您的需要</div>
           <div class="mt-[2.5rem]">
             <div class="bg-[#34E0A1] w-max px-4 py-1 shadow-xl mb-2 font-[400] text-[11px]">TRUSTED BY CUSTOMERS</div>
             <img src="@/assets/icon/starGroup.svg" alt="">
@@ -35,7 +68,7 @@
       <div class="w-[50%] bg-[#efede4] flex flex-col items-start justify-center">
         <div class="flex flex-col justify-center pl-[5rem] gap-3 w-full">
           <div v-for="(item, index) in serviceItem" :key="index"
-            class="flex justify-between items-center bg-black px-5 h-[73px] w-[70%] cursor-pointer">
+            class="flex justify-between items-center bg-black px-5 h-[62px] w-[40%] cursor-pointer">
             <div class="w-[230px] text-white mac:text-[15px]">{{ item.title }}</div>
             <!-- <img :src="item.img" alt=""> -->
             <img src="@/assets/icon/arrow-up.svg" alt="">
@@ -44,7 +77,7 @@
         </div>
       </div>
     </div>
-    <div class="company flex justify-center items-center gap-4 bg-[#efede4] border-b-[1px] border-black border-solid">
+    <div class="company flex justify-center items-center gap-4 bg-[#efede4] border-b-[1px] border-black border-solid tablet:hidden">
       <img class="w-[102px] h-[110px]" src="@/assets/img/company/google.png" alt="">
       <img class="w-[233px] h-[71px]" src="@/assets/img/company/meta.png" alt="">
       <img class="w-[114px] h-[108px]" src="@/assets/img/company/yelp.png" alt="">
@@ -53,7 +86,7 @@
       <img class="w-[247px] h-[64px]" src="@/assets/img/company/tripadvisor.png" alt="">
       <!-- <img v-for="(item, index) in companyList" :key="index" :src="item.img" alt=""> -->
     </div>
-    <div class="bg-[#efede4] flex flex-col justify-center items-center py-[8rem]">
+    <div class="bg-[#efede4] flex flex-col justify-center items-center py-[8rem] tablet:hidden">
       <div class="text-black text-[24px] font-bold mac:text-[20px]">为何选择WAG做为您的行销顾问?</div>
       <div class="flex gap-5 py-[5rem]">
         <div v-for="(item, index) in consultTextList" :key="index"
@@ -64,7 +97,7 @@
             {{ item.text }}</div>
           <div
             class="flex flex-col justify-center items-center gap-1 bg-[#efede4] w-full h-[70%] border-[1px] border-black border-solid">
-            <div v-for="(item2, index2) in item.content" :key="index2" class="text-[18px] mac:text-[15px]">{{ item2 }}
+            <div v-for="(item2, index2) in item.content" :key="index2" class="text-[18px] font-[500] mac:text-[15px]">{{ item2 }}
             </div>
           </div>
         </div>
@@ -73,24 +106,18 @@
         立即免费谘询</div>
     </div>
     <div
-      class="h-[22rem] bg-[#e7750a] border-b-[1px] border-black border-solid flex flex-col justify-center items-center">
-      <div class="flex justify-center items-center w-[75%]">
+      class="h-[22rem] bg-[#e7750a] border-b-[1px] border-black border-solid flex flex-col justify-center items-center tablet:hidden">
+      <div class="flex justify-center items-center w-[65%]">
         <div v-for="(item, index) in conutList" :key="index"
           class="w-full flex flex-col justify-center items-center gap-10">
-          <div class="text-black font-bold text-[48px] mac:text-[36px]">{{ item.conut }}</div>
-          <div class="text-black font-medium text-[24px] mac:text-[20px]">{{ item.text }}</div>
+          <div class="text-black font-bold text-[48px] mac:text-[26px]">{{ item.conut }}</div>
+          <div class="text-black font-medium text-[24px] mac:text-[18px]">{{ item.text }}</div>
         </div>
       </div>
-      <div class="w-[75%] h-[2px] mt-[3rem] bg-black relative">
+      <div class="w-[65%] h-[2px] mt-[3rem] bg-black relative">
         <div v-for="(item, index) in 4" class="absolute top-[-25px] w-[2px] h-[25px] bg-black"
           :style="{left: `${33.3 * index}%`}"></div>
       </div>
-    </div>
-    <div class="consultPhone">
-      <img src="../assets/img/indexConsult.jpg" alt="">
-      <div class="text1">营销</div>
-      <div class="text2">销售</div>
-      <div class="text3">设计</div>
     </div>
     <div class="w-full desktop:bg-[#EFEDE4] flex flex-col items-center justify-center pt-[110px] pb-[159px]">
       <div class="flex flex-col items-center">
@@ -168,12 +195,12 @@ const featureItem = reactive([
   {text:'多方公关媒体<br>服务资源'},
 ])
 const featureItemPhone = reactive([
-  {text:'3+以上专属客户经理'},
-  {text:'24小時专业服务团队'},
-  {text:'品牌出海最有效全平台推广'},
-  {text:'年轻创意团队在美华人'},
-  {text:'20+规模性合作伙伴'},
-  {text:'多方公关媒体服务资源'},
+  {text:'1对1 专属客户经理人'},
+  {text:'24小時全年无休服务团队'},
+  {text:'品牌出海专业顾问谘询'},
+  {text:'服务超过500+ 客户'},
+  {text:'北美市场耕耘超过10年'},
+  {text:'多方公关媒体整合资源'},
 ])
 const serviceItem = reactive([
   {title: '社群运营管理', text:'社交平台运营维护<br>24小时内差评回覆', img:'Img/icon/Shop.png'},
@@ -389,9 +416,6 @@ onMounted(() => {
       align-items: center;
     }
   }
-  .consultPhone{
-    display: none;
-  }
   .glow{
     padding: 100px 24px;
     display: flex;
@@ -478,7 +502,6 @@ onMounted(() => {
 @media screen and (max-width: 420px) { 
   .wrapper{
     .banner{
-      height: 345px;
       padding: 16px 24px;
       >img{
         display: none;
@@ -523,45 +546,8 @@ onMounted(() => {
         }
       }
     }
-    .company{
-      padding: 0 5px 20px;
-    }
     .consult{
       display: none;
-    }
-    .consultPhone{
-      display: block;
-      position: relative;
-      img{
-        width: 100%;
-        height: 100%;
-      }
-      .text1{
-        position: absolute;
-        top: -10px;
-        left: 60%;
-        background-color: #ff479f;
-        color: #fff;
-        padding: 5px 20px;
-        font-size: 10px;
-      }
-      .text2{
-        position: absolute;
-        top: 55%;
-        left: 35%;
-        background-color: #fdf300;
-        padding: 5px 20px;
-        font-size: 10px;
-      }
-      .text3{
-        position: absolute;
-        bottom: -10px;
-        left: 70%;
-        background-color: #e8750a;
-        color: #fff;
-        padding: 5px 20px;
-        font-size: 10px;
-      }
     }
     .glow{
       padding: 50px 24px;

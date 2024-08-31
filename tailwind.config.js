@@ -18,23 +18,24 @@ module.exports = {
         "bg-purple": "#EFEEFF",
         "bg-yellow": "#FFFB9B",
         "bg-blue": "#1B18A3",
-        "bg-tab": "#DBDBDB"
+        "bg-tab": "#DBDBDB",
       },
       padding: {
         c: "16px 24px",
       },
       width: {
-        '65': '65px',
+        65: "65px",
       },
       height: {
-        '100vh-header': 'calc(100vh - 80px)'
-      }
+        "100vh-header": "calc(100vh - 80px)",
+      },
     },
     screens: {
-      'tablet': { 'max': '949px' },
-      'laptop': { 'min': '950px', 'max': '1130px' },
-      'mac': {'min': '1131px', 'max': '1440px'},
-      'desktop': { 'min': '1441px' },
+      tablet: { max: "949px" },
+      laptop: { min: "950px", max: "1130px" },
+      mac: { min: "1131px", max: "1440px" },
+      desktop: { min: "1441px" },
+      mobile: { max: "800px" },
     },
   },
   plugins: [],

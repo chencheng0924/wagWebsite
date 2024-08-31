@@ -2,7 +2,7 @@
 import { useRouter } from 'vue-router'
 const router = useRouter()
 const routerData = reactive([
-  { linkName: '关于ＷＡＧ', link: '/about' },
+  { linkName: '关于ＷＡＧ', link: '/' },
   { linkName: '服务项目', link: '/service' },
   { linkName: '成功案例', link: '/example' },
   { linkName: '营销博客', link: '/blog' },
@@ -13,7 +13,7 @@ const showHamburger = ref(false)
 </script>
 <template>
   <div class="flex bg-black pt-[22px] pl-[90px] pr-[90px] pb-[22px] justify-center items-center laptop:justify-center tablet:justify-center laptop:pt-[10px] laptop:pb-[10px] tablet:pt-[10px] tablet:pb-[10px] fixed top-0 left-0 z-50 w-full">
-    <div class="flex justify-between items-center w-full max-w-[1000px]">
+    <div class="flex justify-between items-center w-full desktop:max-w-[1000px] tablet:justify-center">
       <div class="flex items-center gap-[8rem]">
         <div class="flex items-end cursor-pointer" @click="router.push('/')">
           <img class="w-[81px] h-[34px]" src="@/assets/img/logo2.svg" alt="logo">
@@ -27,7 +27,8 @@ const showHamburger = ref(false)
         <span class="text-black text-[15px] font-[400] w-[61px]">免费咨询</span>
       </div>
     </div>
-    <img src="@/assets/img/menu.svg" class="absolute top-[16px] right-4 cursor-pointer desktop:hidden" @click="showHamburger = true">
+    <img src="@/assets/img/menu.svg" class="absolute top-[16px] right-4 cursor-pointer desktop:hidden mac:hidden tablet:hidden" @click="showHamburger = true">
+    <img src="@/assets/img/menuWhite.svg" class="absolute top-[16px] right-4 cursor-pointer desktop:hidden mac:hidden" @click="showHamburger = true">
   </div>
   <Transition name="slide-fade">
     <div class="w-full h-full fixed top-0 left-0 bg-white z-50 flex items-center pt-[75px] flex-col" v-if="showHamburger">
