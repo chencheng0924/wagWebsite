@@ -3,7 +3,7 @@ import { useRouter } from 'vue-router'
 const emit = defineEmits(['updateStatus'])
 const router = useRouter()
 const routerData = reactive([
-  { linkName: '关于ＷＡＧ', link: '/about' },
+  { linkName: '关于ＷＡＧ', link: '/' },
   { linkName: '服务项目', link: '/service' },
   { linkName: '成功案例', link: '/example' },
   { linkName: '营销博客', link: '/blog' },
