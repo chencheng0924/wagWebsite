@@ -10,16 +10,21 @@
         服务于全球各地超过500+华商，忠誠、專注、用心，贏得各行商家信任，一站式的线上营销服务帮您解除营销管理烦恼，开拓市场引流量至浅在客户群体，高口碑建立带起客户100%好评 ！</div>
       <div
         class="flex justify-center flex-wrap py-[50px] px-0 bg-[#efede4] mt-10 w-[55%] border-[1.5px] border-solid border-black tablet:flex-col tablet:items-center tablet:rounded-[1.5rem] tablet:w-[70%]">
-        <div class="flex justify-center items-center gap-1 w-[33%] my-5 tablet:flex-col tablet:m-0 tablet:gap-[1rem] tablet:w-full" v-for="(item, index) in featureItemPhone"
-          :key="index">
+        <div
+          class="flex justify-center items-center gap-1 w-[33%] my-5 tablet:flex-col tablet:m-0 tablet:gap-[1rem] tablet:w-full"
+          v-for="(item, index) in featureItemPhone" :key="index">
           <img class="!w-[25px] !h-[25px] tablet:hidden" src="@/assets/icon/blackCheck.svg" alt="wag">
-          <div class="w-[150px] whitespace-nowrap text-black font-[600] mac:text-[15px] tablet:text-center tablet:w-full" v-html="item.text" />
-          <img class="!w-2 !h-2 mb-[1rem]" :class="{'hidden': index == featureItemPhone.length - 1}" src="@/assets/icon/blackDot.svg" alt="wag">
+          <div
+            class="w-[150px] whitespace-nowrap text-black font-[600] mac:text-[15px] tablet:text-center tablet:w-full"
+            v-html="item.text" />
+          <img class="!w-2 !h-2 mb-[1rem]" :class="{'hidden': index == featureItemPhone.length - 1}"
+            src="@/assets/icon/blackDot.svg" alt="wag">
         </div>
       </div>
     </div>
     <div class="w-full h-[50px] bg-black tablet:hidden"></div>
-    <div class="company hidden flex-col justify-center items-center gap-4 bg-[#efede4] border-b-[1px] border-black border-solid tablet:flex">
+    <div
+      class="company hidden flex-col justify-center items-center gap-4 bg-[#efede4] border-b-[1px] border-black border-solid tablet:flex">
       <div class="flex items-center gap-[1rem]">
         <img class="w-[45px] h-[48px]" src="@/assets/img/company/google.png" alt="">
         <img class="w-[47px] h-[44px]" src="@/assets/img/company/yelp.png" alt="">
@@ -40,10 +45,10 @@
       </div>
       <div class="flex flex-col my-[2rem]">
         <div v-for="(item, index) in serviceItem" :key="index"
-            class="flex items-center px-5 h-[62px] w-full cursor-pointer gap-2">
-            <img src="@/assets/icon/arrow-right.svg" alt="">
-            <div class=" text-black text-[15px] underline underline-offset-4 font-[600]">{{ item.title }}</div>
-          </div>
+          class="flex items-center px-5 h-[62px] w-full cursor-pointer gap-2">
+          <img src="@/assets/icon/arrow-right.svg" alt="">
+          <div class=" text-black text-[15px] underline underline-offset-4 font-[600]">{{ item.title }}</div>
+        </div>
       </div>
       <div class="flex flex-col gap-2">
         <div class="bg-[#34E0A1] w-max px-4 py-1 shadow-xl mb-2 font-[400] text-[14px]">TRUSTED BY CUSTOMERS</div>
@@ -77,7 +82,8 @@
         </div>
       </div>
     </div>
-    <div class="company flex justify-center items-center gap-4 bg-[#efede4] border-b-[1px] border-black border-solid tablet:hidden">
+    <div
+      class="company flex justify-center items-center gap-4 bg-[#efede4] border-b-[1px] border-black border-solid tablet:hidden">
       <img class="w-[102px] h-[110px]" src="@/assets/img/company/google.png" alt="">
       <img class="w-[233px] h-[71px]" src="@/assets/img/company/meta.png" alt="">
       <img class="w-[114px] h-[108px]" src="@/assets/img/company/yelp.png" alt="">
@@ -97,7 +103,8 @@
             {{ item.text }}</div>
           <div
             class="flex flex-col justify-center items-center gap-1 bg-[#efede4] w-full h-[70%] border-[1px] border-black border-solid">
-            <div v-for="(item2, index2) in item.content" :key="index2" class="text-[18px] font-[500] mac:text-[15px]">{{ item2 }}
+            <div v-for="(item2, index2) in item.content" :key="index2" class="text-[18px] font-[500] mac:text-[15px]">{{
+              item2 }}
             </div>
           </div>
         </div>
@@ -119,7 +126,9 @@
           :style="{left: `${33.3 * index}%`}"></div>
       </div>
     </div>
-    <div class="w-full desktop:bg-[#EFEDE4] flex flex-col items-center justify-center pt-[110px] pb-[159px]">
+    <!-- 介紹輪播 desktop -->
+    <div
+      class="w-full desktop:bg-[#EFEDE4] flex flex-col items-center justify-center pt-[110px] pb-[159px] tablet:hidden">
       <div class="flex flex-col items-center">
         <span class="text-black font-semibold text-[20px] mb-[30px]">适用于各行业的解决方案</span>
         <div
@@ -163,11 +172,60 @@
         </div>
       </div>
     </div>
-    <div class="glow">
-      <div class="title1 mac:text-[36px]">了解为何超過500+家企业选择 WAG Marketing</div>
-      <div class="text-[24px] font-[400] mt-[49px]">WORLDWIDE AND GLOW</div>
-      <div class="text-[24px] font-[700]">我们一起携手合作，让您的品牌曝光率不断提升！</div>
-      <div class="btnList">
+    <!-- 介紹輪播 mobile -->
+    <div class="py-[54px] px-[52px] bg-black hidden tablet:flex flex-col items-center">
+      <span class="text-[#EFEDE4] text-[20px] font-[600]">适用于各行业的解决方案</span>
+      <div
+        class="w-full mt-[40px] bg-[#EFEDE4] pt-[48px] pb-[56px] rounded-[39px] flex flex-col items-center h-[342px]">
+        <div class="bg-[#000000] text-white flex w-fit min-w-[120px] text-center px-[10px]">
+          {{ tabs[nowIdx].type }}</div>
+        <div class="flex">
+          <img src="@/assets/img/star.svg" alt="star" v-for="i in 5" class="w-[20px] mt-[8px]">
+        </div>
+        <div class="w-[75%] mt-[6px] text-[14px] font-semibold text-center">
+          {{ tabs[nowIdx].txt }}</div>
+        <div v-if="tabs[nowIdx].use.length == 0" class="w-[75%] flex mt-[20px] justify-between">
+          <div class="flex flex-col items-center text-[12.56px]">
+            <span>好评率</span>
+            <span class="font-[600] text-[18px]">＋22%</span>
+          </div>
+          <div class="flex flex-col items-center text-[12.56px]">
+            <span>新客率</span>
+            <span class="font-[600] text-[18px]">＋47%</span>
+          </div>
+        </div>
+        <div class="flex mt-[36px] gap-[24px]" v-else>
+          <div class="flex flex-col gap-[12px] items-center">
+            <div v-for="use in tabs[nowIdx].use" class="bg-bg-blue text-white px-[10px] text-center text-[14px] w-fit">
+              {{ use }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="w-full flex justify-between mt-[56px]">
+        <img src="@/assets/mo-arrow.svg" alt="" @click="mobileClick('minus')">
+        <img src="@/assets/mo-arrow.svg" alt="" class="flex rotate-180" @click="mobileClick('plus')">
+      </div>
+    </div>
+    <div
+      class="glow py-[100px] px-[24px] flex flex-col justify-center items-center gap-[15px] bg-[#E7750C] tablet:bg-[#EFEDE4]">
+      <div
+        class="text-white font-[36px] mac:text-[36px] tablet:text-[16px] tablet:text-black tablet:w-[245px] tablet:text-center">
+        了解为何超過500+家企业选择 WAG Marketing</div>
+      <div class="flex gap-[20px] mt-[10px] desktop:hidden mac:hidden laptop:hidden">
+        <a class="rounded-[20px] border-[1px] border-solid border-black px-[36px] py-[8px] bg-white h-[56px] flex justify-center items-center cursor-pointer tablet:max-w-[90px] tablet:text-[14px] tablet:px-[16px] tablet:h-[44px]"
+          href="mailto:contact@wag.marketing">
+          专业谘询
+        </a>
+      </div>
+      <div class="text-[24px] font-[400] mt-[49px] tablet:hidden">WORLDWIDE AND GLOW</div>
+      <div class="text-[24px] font-[700] tablet:hidden">我们一起携手合作，让您的品牌曝光率不断提升！</div>
+      <div class="text-[16px] font-[700] desktop:hidden mac:hidden laptop:hidden text-[#D96800] text-center">
+        我们一起携手合作，<br />让您的品牌曝光率不断提升！
+      </div>
+      <div class="text-[16px] font-[400] mt-[8px] desktop:hidden mac:hidden laptop:hidden text-[#D96800] textSh">
+        WORLDWIDE
+        AND GLOW</div>
+      <div class=" flex gap-[20px] mt-[10px] tablet:hidden">
         <a class="rounded-[20px] border-[1px] border-solid border-black px-[36px] py-[8px] bg-white h-[56px] flex justify-center items-center cursor-pointer"
           href="mailto:contact@wag.marketing">
           专业谘询
@@ -253,6 +311,21 @@ onMounted(() => {
     showGetMail.value = true
   }, 1100)
 })
+const mobileClick = (type: String) => {
+  if (type == 'plus') {
+    if (nowIdx.value == 7) {
+      nowIdx.value = 0
+    } else {
+      nowIdx.value += 1
+    }
+  } else if (type == 'minus') {
+    if (nowIdx.value == 0) {
+      nowIdx.value = 7
+    } else {
+      nowIdx.value -= 1
+    }
+  }
+}
 // type eventItem = {
 //   title: string;
 //   router: string;
@@ -267,6 +340,10 @@ onMounted(() => {
 <style lang="scss" scoped>
 .textOutline {
   -webkit-text-stroke: 2px black;
+}
+.textSh {
+  text-shadow: 0px 4px 4px #00000040;
+  // text-shadow: #000 1px 0 10px;
 }
 .vh {
   height: calc(100vh - 80px);
@@ -417,13 +494,6 @@ onMounted(() => {
     }
   }
   .glow{
-    padding: 100px 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    background-color: #E7750C;
     border-bottom: 1px solid #fff;
     .title1{
       font-weight: 600;

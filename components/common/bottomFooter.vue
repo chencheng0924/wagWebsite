@@ -16,18 +16,27 @@ const emailContent = ref('')
 </script>
 <template>
   <div
-    class="w-full bg-black desktop:pl-[106px] desktop:pr-[170px] flex justify-evenly laptop:justify-center tablet:justify-center laptop:pt-[10px] tablet:pt-[10px] laptop:pl-[10px] laptop:pr-[10px] tablet:pl-[10px] tablet:pr-[10px]">
-    <div class="pt-[69px] pb-[38px] flex justify-center w-[40%] desktop:gap-[104px]">
+    class="w-full bg-black tablet:bg-[#e7750a] mobile:bg-[#e7750a] desktop:pl-[106px] desktop:pr-[170px] flex justify-evenly laptop:justify-center tablet:justify-center laptop:pt-[10px] tablet:pt-[10px] laptop:pl-[10px] laptop:pr-[10px] tablet:pl-[10px] tablet:pr-[10px]">
+    <div class="pt-[69px] pb-[38px] flex justify-center w-[40%] desktop:gap-[104px] mobile:w-full">
       <div class="flex flex-col justify-start laptop:items-center tablet:items-center">
-        <img src="@/assets/img/logo2.svg" alt="logo" class="w-[126px] desktop:mb-[15px]">
-        <span class="mt-[7px] text-white desktop:hidden">WAG流量專家始于纽约，服务于全球各地</span>
-        <span class="text-white laptop:mb-[22px] tablet:mb-[22px] desktop:hidden">超过500+华商!</span>
-        <span v-for="(data, idx) in info" :key="idx + 'data'" class="text-white leading-loose my-1">{{ data }}</span>
+        <img src="@/assets/img/logo2.svg" alt="logo" class="w-[126px] desktop:mb-[15px] tablet:hidden mobile:hidden">
+        <img src="@/assets/mobile-footer.png" alt="logo" class="w-[181px] desktop:hidden laptop:hidden">
+        <span class="mt-[7px] text-white desktop:hidden tablet:hidden mobile:hidden">WAG流量專家始于纽约，服务于全球各地</span>
+        <span
+          class="text-white laptop:mb-[22px] tablet:mb-[22px] desktop:hidden tablet:hidden mobile:hidden">超过500+华商!</span>
+        <span v-for="(data, idx) in info" :key="idx + 'data'"
+          class="text-white leading-loose my-1 mobile:text-black tablet:text-black mobile:font-[400] mobile:text-[14px]">{{
+          data }}</span>
         <div class="flex gap-[9px] mt-[26px]">
-          <img src="@/assets/icon/fb.svg" alt="fblogo">
-          <img src="@/assets/icon/ig.svg" alt="iglogo">
+          <img src="@/assets/icon/fb.svg" alt="fblogo" class="tablet:hidden mobile:hidden">
+          <img src="@/assets/icon/ig.svg" alt="iglogo" class="tablet:hidden mobile:hidden">
+          <img src="@/assets/mobile-fb.svg" alt="fblogo" class="desktop:hidden laptop:hidden">
+          <img src="@/assets/mobile-ig.svg" alt="iglogo" class="desktop:hidden laptop:hidden">
         </div>
-        <div class="text-text-gray mt-[20px] text-[13px] desktop:hidden text-center">@2023 WAG MARKETING INC. ALL RIGHTS
+        <div
+          class="text-text-gray mt-[20px] text-[13px] desktop:hidden text-center mobile:text-[#D6D6D6] mobile:font-[300]">
+          @2023 WAG
+          MARKETING INC. ALL RIGHTS
           RESERVED.</div>
       </div>
     </div>
