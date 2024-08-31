@@ -176,14 +176,16 @@
     <div class="py-[54px] px-[52px] bg-black hidden tablet:flex flex-col items-center">
       <span class="text-[#EFEDE4] text-[20px] font-[600]">适用于各行业的解决方案</span>
       <div
-        class="w-full mt-[40px] bg-[#EFEDE4] pt-[48px] pb-[56px] rounded-[39px] flex flex-col items-center h-[342px]">
-        <div class="bg-[#000000] text-white flex w-fit min-w-[120px] text-center px-[10px]">
-          {{ tabs[nowIdx].type }}</div>
-        <div class="flex">
-          <img src="@/assets/img/star.svg" alt="star" v-for="i in 5" class="w-[20px] mt-[8px]">
+        class="w-full mt-[40px] bg-[#EFEDE4] pt-[48px] pb-[56px] rounded-[39px] flex flex-col items-center justify-between h-[342px]">
+        <div class="flex flex-col items-center">
+          <div class="bg-[#000000] text-white flex w-fit min-w-[120px] text-center px-[10px]">
+            {{ tabs[nowIdx].type }}</div>
+          <div class="flex">
+            <img src="@/assets/img/star.svg" alt="star" v-for="i in 5" class="w-[20px] mt-[8px]">
+          </div>
+          <div class="w-[75%] mt-[6px] text-[14px] font-semibold text-center">
+            {{ tabs[nowIdx].txt }}</div>
         </div>
-        <div class="w-[75%] mt-[6px] text-[14px] font-semibold text-center">
-          {{ tabs[nowIdx].txt }}</div>
         <div v-if="tabs[nowIdx].use.length == 0" class="w-[75%] flex mt-[20px] justify-between">
           <div class="flex flex-col items-center text-[12.56px]">
             <span>好评率</span>
